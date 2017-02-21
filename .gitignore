@@ -1,0 +1,11 @@
+build/
+DerivedData/
+
+*.hmap
+*.ipa
+*.dSYM.zip
+
+.build/
+
+Pods/
+Carthage/Build
