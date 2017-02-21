@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		ADF59E8B1E5C90AB007A0BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF59E8A1E5C90AB007A0BAB /* AppDelegate.swift */; };
-		ADF59E8D1E5C90AB007A0BAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF59E8C1E5C90AB007A0BAB /* ViewController.swift */; };
-		ADF59E901E5C90AB007A0BAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF59E8E1E5C90AB007A0BAB /* Main.storyboard */; };
 		ADF59E921E5C90AB007A0BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF59E911E5C90AB007A0BAB /* Assets.xcassets */; };
 		ADF59E951E5C90AB007A0BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF59E931E5C90AB007A0BAB /* LaunchScreen.storyboard */; };
 		ADF59EA01E5C90AB007A0BAB /* CUPUSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF59E9F1E5C90AB007A0BAB /* CUPUSTests.swift */; };
 		ADF59EAB1E5C90AC007A0BAB /* CUPUSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF59EAA1E5C90AC007A0BAB /* CUPUSUITests.swift */; };
+		ADF59EBA1E5C91C9007A0BAB /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF59EB91E5C91C9007A0BAB /* TabViewController.swift */; };
+		ADF59EBD1E5C9459007A0BAB /* SubscriberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF59EBC1E5C9459007A0BAB /* SubscriberViewController.swift */; };
+		ADF59EBF1E5C94A8007A0BAB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF59EBE1E5C94A8007A0BAB /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +37,6 @@
 /* Begin PBXFileReference section */
 		ADF59E871E5C90AB007A0BAB /* CUPUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CUPUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF59E8A1E5C90AB007A0BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ADF59E8C1E5C90AB007A0BAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ADF59E8F1E5C90AB007A0BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ADF59E911E5C90AB007A0BAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADF59E941E5C90AB007A0BAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADF59E961E5C90AB007A0BAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +46,9 @@
 		ADF59EA61E5C90AC007A0BAB /* CUPUSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CUPUSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF59EAA1E5C90AC007A0BAB /* CUPUSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUPUSUITests.swift; sourceTree = "<group>"; };
 		ADF59EAC1E5C90AC007A0BAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADF59EB91E5C91C9007A0BAB /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabViewController.swift; path = Tab/TabViewController.swift; sourceTree = "<group>"; };
+		ADF59EBC1E5C9459007A0BAB /* SubscriberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriberViewController.swift; path = Subscriber/SubscriberViewController.swift; sourceTree = "<group>"; };
+		ADF59EBE1E5C94A8007A0BAB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +99,13 @@
 		ADF59E891E5C90AB007A0BAB /* CUPUS */ = {
 			isa = PBXGroup;
 			children = (
+				ADF59EBB1E5C9425007A0BAB /* Subscriber */,
+				ADF59EB81E5C9142007A0BAB /* Tab */,
 				ADF59E8A1E5C90AB007A0BAB /* AppDelegate.swift */,
-				ADF59E8C1E5C90AB007A0BAB /* ViewController.swift */,
-				ADF59E8E1E5C90AB007A0BAB /* Main.storyboard */,
 				ADF59E911E5C90AB007A0BAB /* Assets.xcassets */,
 				ADF59E931E5C90AB007A0BAB /* LaunchScreen.storyboard */,
 				ADF59E961E5C90AB007A0BAB /* Info.plist */,
+				ADF59EBE1E5C94A8007A0BAB /* BaseViewController.swift */,
 			);
 			path = CUPUS;
 			sourceTree = "<group>";
@@ -123,6 +126,22 @@
 				ADF59EAC1E5C90AC007A0BAB /* Info.plist */,
 			);
 			path = CUPUSUITests;
+			sourceTree = "<group>";
+		};
+		ADF59EB81E5C9142007A0BAB /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				ADF59EB91E5C91C9007A0BAB /* TabViewController.swift */,
+			);
+			name = Tab;
+			sourceTree = "<group>";
+		};
+		ADF59EBB1E5C9425007A0BAB /* Subscriber */ = {
+			isa = PBXGroup;
+			children = (
+				ADF59EBC1E5C9459007A0BAB /* SubscriberViewController.swift */,
+			);
+			name = Subscriber;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +256,6 @@
 			files = (
 				ADF59E951E5C90AB007A0BAB /* LaunchScreen.storyboard in Resources */,
 				ADF59E921E5C90AB007A0BAB /* Assets.xcassets in Resources */,
-				ADF59E901E5C90AB007A0BAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +280,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADF59E8D1E5C90AB007A0BAB /* ViewController.swift in Sources */,
+				ADF59EBD1E5C9459007A0BAB /* SubscriberViewController.swift in Sources */,
+				ADF59EBF1E5C94A8007A0BAB /* BaseViewController.swift in Sources */,
+				ADF59EBA1E5C91C9007A0BAB /* TabViewController.swift in Sources */,
 				ADF59E8B1E5C90AB007A0BAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,14 +319,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ADF59E8E1E5C90AB007A0BAB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ADF59E8F1E5C90AB007A0BAB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ADF59E931E5C90AB007A0BAB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
