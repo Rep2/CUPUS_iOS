@@ -10,6 +10,9 @@
 		07D82B9BF9E063300795649A /* Pods_CUPUSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D5CAF6D3F257881CE68B64 /* Pods_CUPUSTests.framework */; };
 		1FCF602D11A2F47C3B0A4F5A /* Pods_CUPUS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12401D2A34382D13D232B774 /* Pods_CUPUS.framework */; };
 		75B818CFBCE65927971FC269 /* Pods_CUPUSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A6C2204D6170B938906528 /* Pods_CUPUSUITests.framework */; };
+		AD8B00671E5CA50300D6A17E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B00661E5CA50300D6A17E /* LocationManager.swift */; };
+		ADD699CE1E5DE24500D12C11 /* LongPressHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699CC1E5DE24500D12C11 /* LongPressHandler.swift */; };
+		ADD699CF1E5DE24500D12C11 /* MapCircleDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */; };
 		ADF59E8B1E5C90AB007A0BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF59E8A1E5C90AB007A0BAB /* AppDelegate.swift */; };
 		ADF59E921E5C90AB007A0BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF59E911E5C90AB007A0BAB /* Assets.xcassets */; };
 		ADF59E951E5C90AB007A0BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF59E931E5C90AB007A0BAB /* LaunchScreen.storyboard */; };
@@ -47,6 +50,9 @@
 		98F573961804B8132CBEF816 /* Pods-CUPUSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUPUSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CUPUSTests/Pods-CUPUSTests.release.xcconfig"; sourceTree = "<group>"; };
 		A147A21D4A9A7420C2F080AA /* Pods-CUPUSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUPUSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CUPUSTests/Pods-CUPUSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A9E7E5576F6C7470FE1A2336 /* Pods-CUPUS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUPUS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CUPUS/Pods-CUPUS.release.xcconfig"; sourceTree = "<group>"; };
+		AD8B00661E5CA50300D6A17E /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		ADD699CC1E5DE24500D12C11 /* LongPressHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LongPressHandler.swift; path = Subscriber/LongPressHandler.swift; sourceTree = "<group>"; };
+		ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCircleDrawer.swift; path = Subscriber/MapCircleDrawer.swift; sourceTree = "<group>"; };
 		ADF59E871E5C90AB007A0BAB /* CUPUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CUPUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF59E8A1E5C90AB007A0BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADF59E911E5C90AB007A0BAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 				ADF59E931E5C90AB007A0BAB /* LaunchScreen.storyboard */,
 				ADF59E961E5C90AB007A0BAB /* Info.plist */,
 				ADF59EBE1E5C94A8007A0BAB /* BaseViewController.swift */,
+				AD8B00661E5CA50300D6A17E /* LocationManager.swift */,
 			);
 			path = CUPUS;
 			sourceTree = "<group>";
@@ -167,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				ADF59EBC1E5C9459007A0BAB /* SubscriberViewController.swift */,
+				ADD699CC1E5DE24500D12C11 /* LongPressHandler.swift */,
+				ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */,
 			);
 			name = Subscriber;
 			sourceTree = "<group>";
@@ -469,6 +478,9 @@
 			files = (
 				ADF59EBD1E5C9459007A0BAB /* SubscriberViewController.swift in Sources */,
 				ADF59EBF1E5C94A8007A0BAB /* BaseViewController.swift in Sources */,
+				AD8B00671E5CA50300D6A17E /* LocationManager.swift in Sources */,
+				ADD699CE1E5DE24500D12C11 /* LongPressHandler.swift in Sources */,
+				ADD699CF1E5DE24500D12C11 /* MapCircleDrawer.swift in Sources */,
 				ADF59EBA1E5C91C9007A0BAB /* TabViewController.swift in Sources */,
 				ADF59E8B1E5C90AB007A0BAB /* AppDelegate.swift in Sources */,
 			);
@@ -719,6 +731,7 @@
 				ADF59EB11E5C90AC007A0BAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADF59EB21E5C90AC007A0BAB /* Build configuration list for PBXNativeTarget "CUPUSTests" */ = {
 			isa = XCConfigurationList;
@@ -727,6 +740,7 @@
 				ADF59EB41E5C90AC007A0BAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADF59EB51E5C90AC007A0BAB /* Build configuration list for PBXNativeTarget "CUPUSUITests" */ = {
 			isa = XCConfigurationList;
@@ -735,6 +749,7 @@
 				ADF59EB71E5C90AC007A0BAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
