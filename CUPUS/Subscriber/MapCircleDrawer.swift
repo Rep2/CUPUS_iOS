@@ -36,4 +36,9 @@ class MapWithCircleDrawer {
     func stop() {
         timer?.invalidate()
     }
+    
+    func deleteCircle() {
+        circle.map = nil
+        circle = nil
+    }
 }

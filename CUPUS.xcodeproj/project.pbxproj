@@ -10,9 +10,23 @@
 		07D82B9BF9E063300795649A /* Pods_CUPUSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D5CAF6D3F257881CE68B64 /* Pods_CUPUSTests.framework */; };
 		1FCF602D11A2F47C3B0A4F5A /* Pods_CUPUS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12401D2A34382D13D232B774 /* Pods_CUPUS.framework */; };
 		75B818CFBCE65927971FC269 /* Pods_CUPUSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A6C2204D6170B938906528 /* Pods_CUPUSUITests.framework */; };
+		AD87D8291E5F7C050055C116 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8281E5F7C050055C116 /* TableViewController.swift */; };
+		AD87D82C1E5F7D2C0055C116 /* NewSubscriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D82B1E5F7D2C0055C116 /* NewSubscriptionPresenter.swift */; };
+		AD87D82E1E5F7DCB0055C116 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D82D1E5F7DCB0055C116 /* BasicCell.swift */; };
+		AD87D8301E5F7DF60055C116 /* BasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD87D82F1E5F7DF60055C116 /* BasicCell.xib */; };
+		AD87D8341E5F7E9F0055C116 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8331E5F7E9F0055C116 /* Identifiable.swift */; };
+		AD87D8361E5F7F6F0055C116 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8351E5F7F6F0055C116 /* ViewController.swift */; };
+		AD87D8381E5F80250055C116 /* NewSubscriptionPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8371E5F80250055C116 /* NewSubscriptionPresentable.swift */; };
+		AD87D83E1E5F8E9F0055C116 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD87D83D1E5F8E9F0055C116 /* ButtonCell.xib */; };
+		AD87D8401E5F8ED30055C116 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D83F1E5F8ED30055C116 /* ButtonCell.swift */; };
+		AD87D8421E5F972F0055C116 /* NumberInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8411E5F972F0055C116 /* NumberInputCell.swift */; };
+		AD87D8441E5F974D0055C116 /* NumberInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD87D8431E5F974D0055C116 /* NumberInputCell.xib */; };
+		AD87D8471E5FAA2A0055C116 /* SubscriptionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8461E5FAA2A0055C116 /* SubscriptionList.swift */; };
+		AD87D8491E6034040055C116 /* SubscriptionListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8481E6034040055C116 /* SubscriptionListPresenter.swift */; };
 		AD8B00671E5CA50300D6A17E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B00661E5CA50300D6A17E /* LocationManager.swift */; };
 		ADD699CE1E5DE24500D12C11 /* LongPressHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699CC1E5DE24500D12C11 /* LongPressHandler.swift */; };
 		ADD699CF1E5DE24500D12C11 /* MapCircleDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */; };
+		ADD699D11E5DE35F00D12C11 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699D01E5DE35F00D12C11 /* AlertHandler.swift */; };
 		ADF59E8B1E5C90AB007A0BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF59E8A1E5C90AB007A0BAB /* AppDelegate.swift */; };
 		ADF59E921E5C90AB007A0BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF59E911E5C90AB007A0BAB /* Assets.xcassets */; };
 		ADF59E951E5C90AB007A0BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF59E931E5C90AB007A0BAB /* LaunchScreen.storyboard */; };
@@ -50,9 +64,23 @@
 		98F573961804B8132CBEF816 /* Pods-CUPUSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUPUSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CUPUSTests/Pods-CUPUSTests.release.xcconfig"; sourceTree = "<group>"; };
 		A147A21D4A9A7420C2F080AA /* Pods-CUPUSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUPUSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CUPUSTests/Pods-CUPUSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A9E7E5576F6C7470FE1A2336 /* Pods-CUPUS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUPUS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CUPUS/Pods-CUPUS.release.xcconfig"; sourceTree = "<group>"; };
+		AD87D8281E5F7C050055C116 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		AD87D82B1E5F7D2C0055C116 /* NewSubscriptionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewSubscriptionPresenter.swift; path = Subscriber/NewSubscription/NewSubscriptionPresenter.swift; sourceTree = "<group>"; };
+		AD87D82D1E5F7DCB0055C116 /* BasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
+		AD87D82F1E5F7DF60055C116 /* BasicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicCell.xib; sourceTree = "<group>"; };
+		AD87D8331E5F7E9F0055C116 /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Identifiable.swift; path = Protocols/Identifiable.swift; sourceTree = "<group>"; };
+		AD87D8351E5F7F6F0055C116 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Protocols/ViewController.swift; sourceTree = "<group>"; };
+		AD87D8371E5F80250055C116 /* NewSubscriptionPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewSubscriptionPresentable.swift; path = Subscriber/NewSubscription/NewSubscriptionPresentable.swift; sourceTree = "<group>"; };
+		AD87D83D1E5F8E9F0055C116 /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
+		AD87D83F1E5F8ED30055C116 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		AD87D8411E5F972F0055C116 /* NumberInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberInputCell.swift; sourceTree = "<group>"; };
+		AD87D8431E5F974D0055C116 /* NumberInputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumberInputCell.xib; sourceTree = "<group>"; };
+		AD87D8461E5FAA2A0055C116 /* SubscriptionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionList.swift; sourceTree = "<group>"; };
+		AD87D8481E6034040055C116 /* SubscriptionListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionListPresenter.swift; path = Subscriber/SubscriptionListPresenter/SubscriptionListPresenter.swift; sourceTree = "<group>"; };
 		AD8B00661E5CA50300D6A17E /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		ADD699CC1E5DE24500D12C11 /* LongPressHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LongPressHandler.swift; path = Subscriber/LongPressHandler.swift; sourceTree = "<group>"; };
 		ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCircleDrawer.swift; path = Subscriber/MapCircleDrawer.swift; sourceTree = "<group>"; };
+		ADD699D01E5DE35F00D12C11 /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		ADF59E871E5C90AB007A0BAB /* CUPUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CUPUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF59E8A1E5C90AB007A0BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADF59E911E5C90AB007A0BAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +135,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AD87D82A1E5F7C8C0055C116 /* NewSubscription */ = {
+			isa = PBXGroup;
+			children = (
+				AD87D82B1E5F7D2C0055C116 /* NewSubscriptionPresenter.swift */,
+				AD87D8371E5F80250055C116 /* NewSubscriptionPresentable.swift */,
+			);
+			name = NewSubscription;
+			sourceTree = "<group>";
+		};
+		AD87D8321E5F7E860055C116 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				AD87D8331E5F7E9F0055C116 /* Identifiable.swift */,
+				AD87D8351E5F7F6F0055C116 /* ViewController.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		AD87D8451E5FAA1B0055C116 /* SubscriptionList */ = {
+			isa = PBXGroup;
+			children = (
+				AD87D8461E5FAA2A0055C116 /* SubscriptionList.swift */,
+				AD87D8481E6034040055C116 /* SubscriptionListPresenter.swift */,
+			);
+			name = SubscriptionList;
+			sourceTree = "<group>";
+		};
 		ADF59E7E1E5C90AB007A0BAB = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +187,7 @@
 		ADF59E891E5C90AB007A0BAB /* CUPUS */ = {
 			isa = PBXGroup;
 			children = (
+				AD87D8321E5F7E860055C116 /* Protocol */,
 				ADF59EBB1E5C9425007A0BAB /* Subscriber */,
 				ADF59EB81E5C9142007A0BAB /* Tab */,
 				ADF59E8A1E5C90AB007A0BAB /* AppDelegate.swift */,
@@ -140,6 +196,14 @@
 				ADF59E961E5C90AB007A0BAB /* Info.plist */,
 				ADF59EBE1E5C94A8007A0BAB /* BaseViewController.swift */,
 				AD8B00661E5CA50300D6A17E /* LocationManager.swift */,
+				ADD699D01E5DE35F00D12C11 /* AlertHandler.swift */,
+				AD87D8281E5F7C050055C116 /* TableViewController.swift */,
+				AD87D82D1E5F7DCB0055C116 /* BasicCell.swift */,
+				AD87D82F1E5F7DF60055C116 /* BasicCell.xib */,
+				AD87D83D1E5F8E9F0055C116 /* ButtonCell.xib */,
+				AD87D83F1E5F8ED30055C116 /* ButtonCell.swift */,
+				AD87D8411E5F972F0055C116 /* NumberInputCell.swift */,
+				AD87D8431E5F974D0055C116 /* NumberInputCell.xib */,
 			);
 			path = CUPUS;
 			sourceTree = "<group>";
@@ -173,6 +237,8 @@
 		ADF59EBB1E5C9425007A0BAB /* Subscriber */ = {
 			isa = PBXGroup;
 			children = (
+				AD87D8451E5FAA1B0055C116 /* SubscriptionList */,
+				AD87D82A1E5F7C8C0055C116 /* NewSubscription */,
 				ADF59EBC1E5C9459007A0BAB /* SubscriberViewController.swift */,
 				ADD699CC1E5DE24500D12C11 /* LongPressHandler.swift */,
 				ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */,
@@ -313,7 +379,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADF59E951E5C90AB007A0BAB /* LaunchScreen.storyboard in Resources */,
+				AD87D8301E5F7DF60055C116 /* BasicCell.xib in Resources */,
+				AD87D8441E5F974D0055C116 /* NumberInputCell.xib in Resources */,
 				ADF59E921E5C90AB007A0BAB /* Assets.xcassets in Resources */,
+				AD87D83E1E5F8E9F0055C116 /* ButtonCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,11 +546,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADF59EBD1E5C9459007A0BAB /* SubscriberViewController.swift in Sources */,
+				AD87D8341E5F7E9F0055C116 /* Identifiable.swift in Sources */,
 				ADF59EBF1E5C94A8007A0BAB /* BaseViewController.swift in Sources */,
+				AD87D8471E5FAA2A0055C116 /* SubscriptionList.swift in Sources */,
 				AD8B00671E5CA50300D6A17E /* LocationManager.swift in Sources */,
+				AD87D8491E6034040055C116 /* SubscriptionListPresenter.swift in Sources */,
+				ADD699D11E5DE35F00D12C11 /* AlertHandler.swift in Sources */,
+				AD87D8291E5F7C050055C116 /* TableViewController.swift in Sources */,
 				ADD699CE1E5DE24500D12C11 /* LongPressHandler.swift in Sources */,
 				ADD699CF1E5DE24500D12C11 /* MapCircleDrawer.swift in Sources */,
+				AD87D8421E5F972F0055C116 /* NumberInputCell.swift in Sources */,
+				AD87D8401E5F8ED30055C116 /* ButtonCell.swift in Sources */,
+				AD87D8361E5F7F6F0055C116 /* ViewController.swift in Sources */,
 				ADF59EBA1E5C91C9007A0BAB /* TabViewController.swift in Sources */,
+				AD87D8381E5F80250055C116 /* NewSubscriptionPresentable.swift in Sources */,
+				AD87D82E1E5F7DCB0055C116 /* BasicCell.swift in Sources */,
+				AD87D82C1E5F7D2C0055C116 /* NewSubscriptionPresenter.swift in Sources */,
 				ADF59E8B1E5C90AB007A0BAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

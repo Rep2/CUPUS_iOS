@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Map Marker-25.png",
+      "filename" : "Right_24.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Map Marker-51.png",
+      "filename" : "Right_50.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Map Marker-100.png",
+      "filename" : "Right_100.png",
       "scale" : "3x"
     }
   ],
