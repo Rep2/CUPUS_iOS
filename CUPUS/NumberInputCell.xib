@@ -25,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gpl-Ra-R8a">
-                        <rect key="frame" x="259" y="14" width="100" height="17"/>
+                        <rect key="frame" x="259" y="0.0" width="100" height="43.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="EBp-0n-zAb"/>
                         </constraints>
@@ -40,7 +40,8 @@
                 <constraints>
                     <constraint firstItem="UmJ-J0-OdU" firstAttribute="leading" secondItem="CQG-fJ-CYE" secondAttribute="leading" constant="16" id="NPq-yY-Iqs"/>
                     <constraint firstItem="UmJ-J0-OdU" firstAttribute="centerY" secondItem="CQG-fJ-CYE" secondAttribute="centerY" id="Ugm-1W-Rai"/>
-                    <constraint firstItem="gpl-Ra-R8a" firstAttribute="centerY" secondItem="CQG-fJ-CYE" secondAttribute="centerY" constant="1" id="j5v-D7-Nf3"/>
+                    <constraint firstAttribute="bottom" secondItem="gpl-Ra-R8a" secondAttribute="bottom" id="fVw-1M-npm"/>
+                    <constraint firstItem="gpl-Ra-R8a" firstAttribute="top" secondItem="CQG-fJ-CYE" secondAttribute="top" id="kdL-tk-Ds1"/>
                     <constraint firstAttribute="trailing" secondItem="gpl-Ra-R8a" secondAttribute="trailing" constant="16" id="rx3-bj-u6z"/>
                     <constraint firstItem="gpl-Ra-R8a" firstAttribute="leading" secondItem="UmJ-J0-OdU" secondAttribute="trailing" constant="8" id="tYJ-DO-ElY"/>
                 </constraints>

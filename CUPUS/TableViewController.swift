@@ -35,4 +35,10 @@ extension TableViewController {
         
         delegate?.viewDidAppear()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        delegate?.viewWillAppear()
+    }
 }

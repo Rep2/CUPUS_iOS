@@ -51,6 +51,14 @@ class SubscriberViewController: BaseViewController {
         navigationItem.leftBarButtonItem = subscriptionListButton
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let subscription = SubscriptionList.sharedInstance.selectedSubscription {
+            mapWithCircle.set(circle: subscription.circle)
+        }
+    }
+    
     func createMap() {
         let location = currentLocation != nil ? currentLocation! : zagrebLoaction
         
@@ -81,7 +89,7 @@ class SubscriberViewController: BaseViewController {
     func plusPressed() {
         presentAlert(title: "Odaberite tip pretplate", actions: [
             UIAlertAction(title: "Follow", style: .default, handler: { _ in
-                self.pushNewSubscription(state: .follow)
+                self.pushNewSubscription(subscriptionType: .follow(radiusInMeters: 100))
             }),
             UIAlertAction(title: "Pick", style: .default, handler: { _ in
                 self.longPressHadnler.set(enabled: true)
@@ -97,39 +105,27 @@ class SubscriberViewController: BaseViewController {
         
         navigationItem.rightBarButtonItems = [plusButton]
         
-        mapWithCircle.deleteCircle()
+        if let selectedSubscription = SubscriptionList.sharedInstance.selectedSubscription {
+            mapWithCircle.set(circle: selectedSubscription.circle)
+        } else {
+            mapWithCircle.deleteCircle()
+        }
     }
     
     func areaSelected() {
-        pushNewSubscription(state: .pick)
+        pushNewSubscription(subscriptionType: .pick(circle: Circle(gmsCircle: mapWithCircle.circle)))
     }
     
-    func pushNewSubscription(state: NewSubscriptionState) {
-        let (_, viewController) = NewSubscriptionPresenter.create(state: state, callback: newSubscription)
+    func pushNewSubscription(subscriptionType: SubscriptionType) {
+        let (_, viewController) = SubscriptionCreationPresenter.create(subscriptionType: subscriptionType)
         
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func newSubscription(newSubscriptionTypes: NewSubscriptionPresentable, radious: NumberInputCellPresentable?) {
-        let circle: GMSCircle
-        
-        if let radious = radious {
-            let location = currentLocation != nil ? currentLocation! : zagrebLoaction
-            circle = GMSCircle(position: location.coordinate, radius: Double(radious.inputViewNumber))
-        } else if let mapCircle = mapWithCircle.circle {
-            circle = mapCircle
-        } else {
-            fatalError("Failed to create subscription")
-        }
-        
-        let types = newSubscriptionTypes.subscriptionTypes.filter { $0.selected }.map { $0.title }
-        let subscription = Subscription(state: radious != nil ? .follow : .pick, subscriptionTypes: types, circle: circle)
-        
-        SubscriptionList.sharedInstance.add(subscription: subscription)
-    }
-    
     func subscriptionListSelected() {
+        let (_, viewController) = SubscriptionListPresenter.create()
         
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     deinit {

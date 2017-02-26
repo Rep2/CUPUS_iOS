@@ -8,7 +8,6 @@ enum LongPressHadnlerEvent {
 class LongPressHadnler: NSObject {
     
     var gestureRecognizer: UILongPressGestureRecognizer!
-    var longPressActive = false
     
     let valueChangedCallback: (LongPressHadnlerEvent) -> Void
     
@@ -23,10 +22,15 @@ class LongPressHadnler: NSObject {
         view.addGestureRecognizer(gestureRecognizer)
     }
     
-    func longPressEvent() {
-        valueChangedCallback(longPressActive ? .ended : .started)
-        
-        longPressActive = !longPressActive
+    func longPressEvent(sender: UILongPressGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            valueChangedCallback(.started)
+        case .ended, .cancelled:
+            valueChangedCallback(.ended)
+        default:
+            break
+        }
     }
     
     func pressLocation(in view: UIView) -> CGPoint {

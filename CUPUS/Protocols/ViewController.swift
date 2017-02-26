@@ -5,5 +5,6 @@ protocol ViewController {
 
 extension ViewController {
     func viewDidLoad() {}
+    func viewWillAppear() {}
     func viewDidAppear() {}
 }
