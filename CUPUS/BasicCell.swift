@@ -4,6 +4,10 @@ protocol BasicCellPresentable {
     var title: String { get }
 }
 
+struct BasicCellPresentableImplementation: BasicCellPresentable {
+    var title: String
+}
+
 class BasicCell: UITableViewCell, Identifiable {
     
     @IBOutlet weak var title: UILabel!

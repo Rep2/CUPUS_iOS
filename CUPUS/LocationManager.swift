@@ -8,7 +8,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
 
     private var observers = [UUID: (CLLocation?) -> Void]()
     
-    private var location: CLLocation?
+    var location: CLLocation = CLLocation(latitude: 45.8144400, longitude: 15.9779800)
     
     private override init() {
         locationManager = CLLocationManager()

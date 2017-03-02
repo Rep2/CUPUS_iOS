@@ -1,6 +1,15 @@
 enum SubscriptionType {
     case follow(radiusInMeters: Double)
     case pick(circle: Circle)
+    
+    var title: String {
+        switch self {
+        case .follow:
+            return "Follow"
+        case .pick:
+            return "Pick"
+        }
+    }
 }
 
 // MARK: subscription creation presentable

@@ -1,12 +1,10 @@
 import GoogleMaps
 
-class SubscriptionList {
-    static let sharedInstance = SubscriptionList()
+class SubscriptionHandler {
+    static let sharedInstance = SubscriptionHandler()
     
     var subscriptions = [Subscription]()
     var selectedSubscriptionIndex: Int?
-    
-    var subscriptionCount = 0
     
     func createSubscription(type: SubscriptionType, filters: [String]) {
         let subscription = Subscription(type: type, subscriptionTypes: filters)
@@ -15,8 +13,6 @@ class SubscriptionList {
     }
     
     func add(subscription: Subscription) {
-        subscriptionCount += 1
-        
         subscriptions.append(subscription)
         selectedSubscriptionIndex = subscriptions.count - 1
     }
@@ -41,21 +37,4 @@ class SubscriptionList {
         }
     }
 
-}
-
-struct Subscription {
-    let title: String
-    
-    let type: SubscriptionType
-    let subscriptionTypes: [String]
-    
-    var circle: GMSCircle!
-    
-    init(type: SubscriptionType, subscriptionTypes: [String]) {
-        self.title = "Subscription \(SubscriptionList.sharedInstance.subscriptionCount)"
-        
-        self.type = type
-        self.subscriptionTypes = subscriptionTypes
-        self.circle = nil
-    }
 }

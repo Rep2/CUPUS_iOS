@@ -33,7 +33,7 @@ extension SubscriptionListPresenter {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let selectedIndex = SubscriptionList.sharedInstance.selectedSubscriptionIndex {
+        if let selectedIndex = SubscriptionHandler.sharedInstance.selectedSubscriptionIndex {
             if selectedIndex != indexPath.row {
                 tableView.cellForRow(at: IndexPath(row: selectedIndex, section: 0))?.accessoryType = .none
             } else {
@@ -43,16 +43,16 @@ extension SubscriptionListPresenter {
         
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         
-        SubscriptionList.sharedInstance.selectSubscription(at: indexPath)
+        SubscriptionHandler.sharedInstance.selectSubscription(at: indexPath)
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SubscriptionCell.identifier, for: indexPath)
         
         if let cell = cell as? SubscriptionCell {
-            cell.set(presentable: SubscriptionList.sharedInstance.subscriptions[indexPath.row])
+            cell.set(presentable: SubscriptionHandler.sharedInstance.subscriptions[indexPath.row])
             
-            if let selectedIndex = SubscriptionList.sharedInstance.selectedSubscriptionIndex, selectedIndex == indexPath.row {
+            if let selectedIndex = SubscriptionHandler.sharedInstance.selectedSubscriptionIndex, selectedIndex == indexPath.row {
                 cell.accessoryType = .checkmark
             }
         }
@@ -61,7 +61,7 @@ extension SubscriptionListPresenter {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SubscriptionList.sharedInstance.subscriptions.count
+        return SubscriptionHandler.sharedInstance.subscriptions.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -79,8 +79,12 @@ extension SubscriptionListPresenter {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            SubscriptionList.sharedInstance.removeSubscription(at: indexPath)
-            tableViewController?.tableView.deleteRows(at: [indexPath], with: .left)
+            SubscriptionHandler.sharedInstance.removeSubscription(at: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if SubscriptionHandler.sharedInstance.subscriptions.count > 0 {
+                tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+            }
         default:
             break
         }

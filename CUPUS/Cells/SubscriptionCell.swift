@@ -22,9 +22,9 @@ class SubscriptionCell: UITableViewCell, Identifiable {
     
     func present() {
         if let title = title, let presentable = presentable {
-            title.text = presentable.title
+            title.text = presentable.type.title
             type.text = presentable.subscriptionTypes.joined(separator: ", ")
-            location.text = "\(Int(presentable.circle.radius))m \(Double(presentable.circle.position.latitude).roundTo(places: 3)) lat,\(Double(presentable.circle.position.longitude).roundTo(places: 3)) long"
+            location.text = "\(Int(presentable.circle.radius))m (\(Double(presentable.circle.position.latitude).roundTo(places: 2)), \(Double(presentable.circle.position.longitude).roundTo(places: 2)))"
         }
     }
     

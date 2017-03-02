@@ -28,7 +28,7 @@ extension SubscriptionCreationPresenter: TableViewDelegate {
     func viewDidLoad() {
         tableViewController?.tableView.register(UINib(nibName: BasicCell.identifier, bundle: nil), forCellReuseIdentifier: BasicCell.identifier)
         tableViewController?.tableView.register(UINib(nibName: ButtonCell.identifier, bundle: nil), forCellReuseIdentifier: ButtonCell.identifier)
-        tableViewController?.tableView.register(UINib(nibName: NumberInputCell.identifier, bundle: nil), forCellReuseIdentifier: NumberInputCell.identifier)
+        tableViewController?.tableView.register(UINib(nibName: InputCell.identifier, bundle: nil), forCellReuseIdentifier: InputCell.identifier)
         
         tableViewController?.title = "Odabir pretplate"
         
@@ -38,9 +38,7 @@ extension SubscriptionCreationPresenter: TableViewDelegate {
     }
     
     func backgroundPressed() {
-        if case .follow = subscriptionType, let cell = tableViewController?.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? NumberInputCell {
-            cell.input.resignFirstResponder()
-        }
+        tableViewController?.tableView.endEditing(true)
     }
     
     func savePressed() {
@@ -51,16 +49,22 @@ extension SubscriptionCreationPresenter: TableViewDelegate {
                     UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 ])
         } else {
-            SubscriptionList.sharedInstance.createSubscription(type: subscriptionType, filters: slectedTypes)
+            SubscriptionHandler.sharedInstance.createSubscription(type: subscriptionType, filters: slectedTypes)
             
             _ = tableViewController?.navigationController?.popViewController(animated: true)
         }
     }
     
     
-    func radiusChanged(value: Int) {
-        if case .follow = subscriptionType {
-            subscriptionType = .follow(radiusInMeters: Double(value))
+    func radiusChanged(value: String) {
+        if case .follow(let radius) = subscriptionType {
+            if let value = Int(value), value > 0 {
+                subscriptionType = .follow(radiusInMeters: Double(value))
+            } else {
+                if let cell = tableViewController?.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? InputCell {
+                    cell.set(presentable: InputCellPresentable(title: "Radius pretplate u metrima", input: String(Int(radius)), inputViewDidChange: radiusChanged))
+                }
+            }
         }
     }
 }
@@ -92,10 +96,10 @@ extension SubscriptionCreationPresenter {
         
         switch (subscriptionType, indexPath.section) {
         case (.follow(let radius), 0):
-            cell = tableView.dequeueReusableCell(withIdentifier: NumberInputCell.identifier, for: indexPath)
+            cell = tableView.dequeueReusableCell(withIdentifier: InputCell.identifier, for: indexPath)
             
-            if let cell = cell as? NumberInputCell {
-                cell.set(presentable: NumberInputCellPresentable(title: "Radius pretplate u metrima", inputViewNumber: Int(radius), inputViewDidChange: radiusChanged))
+            if let cell = cell as? InputCell {
+                cell.set(presentable: InputCellPresentable(title: "Radius pretplate u metrima", input: String(Int(radius)), inputViewDidChange: radiusChanged))
             }
         case (.follow, 1), (.pick, 0):
             cell = tableView.dequeueReusableCell(withIdentifier: BasicCell.identifier, for: indexPath)

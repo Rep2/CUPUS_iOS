@@ -34,11 +34,17 @@ class MapWithCircleDrawer {
     }
     
     func deleteCircle() {
-        circle.map = nil
+        circle?.map = nil
         circle = nil
     }
     
     func set(circle: GMSCircle) {
+        self.circle?.map = nil
+        
+        self.circle = createCircle(coordinate: circle.position, radius: circle.radius)
+    }
+    
+    func set(circle: Circle) {
         self.circle?.map = nil
         
         self.circle = createCircle(coordinate: circle.position, radius: circle.radius)

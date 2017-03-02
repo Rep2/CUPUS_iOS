@@ -10,6 +10,14 @@
 		07D82B9BF9E063300795649A /* Pods_CUPUSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D5CAF6D3F257881CE68B64 /* Pods_CUPUSTests.framework */; };
 		1FCF602D11A2F47C3B0A4F5A /* Pods_CUPUS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12401D2A34382D13D232B774 /* Pods_CUPUS.framework */; };
 		75B818CFBCE65927971FC269 /* Pods_CUPUSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A6C2204D6170B938906528 /* Pods_CUPUSUITests.framework */; };
+		AD10FB8C1E660B2400E9F700 /* AudioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD10FB8B1E660B2400E9F700 /* AudioPresenter.swift */; };
+		AD10FB901E661C0C00E9F700 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD10FB8F1E661C0C00E9F700 /* SettingsPresenter.swift */; };
+		AD10FB921E66258500E9F700 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD10FB911E66258500E9F700 /* SearchViewController.swift */; };
+		AD10FB941E6628D000E9F700 /* SettingsPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD10FB931E6628D000E9F700 /* SettingsPresentable.swift */; };
+		AD4EDD541E65FA140047C788 /* SensorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4EDD531E65FA140047C788 /* SensorCell.xib */; };
+		AD4EDD561E65FA5E0047C788 /* SensorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EDD551E65FA5E0047C788 /* SensorCell.swift */; };
+		AD4EDD5E1E6605E90047C788 /* AudioSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EDD5C1E6605E90047C788 /* AudioSensor.swift */; };
+		AD4EDD5F1E6605E90047C788 /* AudioSensor.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4EDD5D1E6605E90047C788 /* AudioSensor.xib */; };
 		AD87D8291E5F7C050055C116 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8281E5F7C050055C116 /* TableViewController.swift */; };
 		AD87D82E1E5F7DCB0055C116 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D82D1E5F7DCB0055C116 /* BasicCell.swift */; };
 		AD87D8301E5F7DF60055C116 /* BasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD87D82F1E5F7DF60055C116 /* BasicCell.xib */; };
@@ -17,18 +25,21 @@
 		AD87D8361E5F7F6F0055C116 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8351E5F7F6F0055C116 /* ViewController.swift */; };
 		AD87D83E1E5F8E9F0055C116 /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD87D83D1E5F8E9F0055C116 /* ButtonCell.xib */; };
 		AD87D8401E5F8ED30055C116 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D83F1E5F8ED30055C116 /* ButtonCell.swift */; };
-		AD87D8421E5F972F0055C116 /* NumberInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8411E5F972F0055C116 /* NumberInputCell.swift */; };
-		AD87D8441E5F974D0055C116 /* NumberInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD87D8431E5F974D0055C116 /* NumberInputCell.xib */; };
-		AD87D84C1E6034550055C116 /* SubscriptionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D84A1E6034550055C116 /* SubscriptionList.swift */; };
+		AD87D8421E5F972F0055C116 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8411E5F972F0055C116 /* InputCell.swift */; };
+		AD87D8441E5F974D0055C116 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD87D8431E5F974D0055C116 /* InputCell.xib */; };
+		AD87D84C1E6034550055C116 /* SubscriptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D84A1E6034550055C116 /* SubscriptionHandler.swift */; };
 		AD87D84D1E6034550055C116 /* SubscriptionListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D84B1E6034550055C116 /* SubscriptionListPresenter.swift */; };
 		AD87D8511E60374B0055C116 /* SubscriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD87D8501E60374B0055C116 /* SubscriptionCell.xib */; };
 		AD87D8531E60380E0055C116 /* SubscriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8521E60380E0055C116 /* SubscriptionCell.swift */; };
-		AD87D8551E6045620055C116 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8541E6045620055C116 /* Double.swift */; };
+		AD87D8551E6045620055C116 /* Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8541E6045620055C116 /* Rounding.swift */; };
 		AD8B00671E5CA50300D6A17E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B00661E5CA50300D6A17E /* LocationManager.swift */; };
 		AD8B3DDF1E631DE600606E04 /* SubscriptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B3DDE1E631DE600606E04 /* SubscriptionType.swift */; };
 		AD8B3DE11E631FB300606E04 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B3DE01E631FB300606E04 /* Circle.swift */; };
 		AD8B3DE51E6332D700606E04 /* SubscriptionCreationPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B3DE31E6332D700606E04 /* SubscriptionCreationPresentable.swift */; };
 		AD8B3DE61E6332D700606E04 /* SubscriptionCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B3DE41E6332D700606E04 /* SubscriptionCreationPresenter.swift */; };
+		AD8B3DE81E6339FD00606E04 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B3DE71E6339FD00606E04 /* Subscription.swift */; };
+		AD8B3DEB1E6350D300606E04 /* SensorsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B3DEA1E6350D300606E04 /* SensorsPresenter.swift */; };
+		AD8B3DED1E6358C500606E04 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B3DEC1E6358C500606E04 /* AudioRecorder.swift */; };
 		ADD699CE1E5DE24500D12C11 /* LongPressHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699CC1E5DE24500D12C11 /* LongPressHandler.swift */; };
 		ADD699CF1E5DE24500D12C11 /* MapCircleDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */; };
 		ADD699D11E5DE35F00D12C11 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699D01E5DE35F00D12C11 /* AlertHandler.swift */; };
@@ -69,6 +80,14 @@
 		98F573961804B8132CBEF816 /* Pods-CUPUSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUPUSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CUPUSTests/Pods-CUPUSTests.release.xcconfig"; sourceTree = "<group>"; };
 		A147A21D4A9A7420C2F080AA /* Pods-CUPUSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUPUSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CUPUSTests/Pods-CUPUSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A9E7E5576F6C7470FE1A2336 /* Pods-CUPUS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUPUS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CUPUS/Pods-CUPUS.release.xcconfig"; sourceTree = "<group>"; };
+		AD10FB8B1E660B2400E9F700 /* AudioPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioPresenter.swift; path = Publisher/AudioSensor/AudioPresenter.swift; sourceTree = "<group>"; };
+		AD10FB8F1E661C0C00E9F700 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsPresenter.swift; path = Settings/SettingsPresenter.swift; sourceTree = "<group>"; };
+		AD10FB911E66258500E9F700 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Settings/SearchViewController.swift; sourceTree = "<group>"; };
+		AD10FB931E6628D000E9F700 /* SettingsPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsPresentable.swift; path = Settings/SettingsPresentable.swift; sourceTree = "<group>"; };
+		AD4EDD531E65FA140047C788 /* SensorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SensorCell.xib; path = Cells/SensorCell.xib; sourceTree = "<group>"; };
+		AD4EDD551E65FA5E0047C788 /* SensorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensorCell.swift; path = Cells/SensorCell.swift; sourceTree = "<group>"; };
+		AD4EDD5C1E6605E90047C788 /* AudioSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioSensor.swift; path = Publisher/AudioSensor/AudioSensor.swift; sourceTree = "<group>"; };
+		AD4EDD5D1E6605E90047C788 /* AudioSensor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AudioSensor.xib; path = Publisher/AudioSensor/AudioSensor.xib; sourceTree = "<group>"; };
 		AD87D8281E5F7C050055C116 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AD87D82D1E5F7DCB0055C116 /* BasicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
 		AD87D82F1E5F7DF60055C116 /* BasicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicCell.xib; sourceTree = "<group>"; };
@@ -76,18 +95,21 @@
 		AD87D8351E5F7F6F0055C116 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Protocols/ViewController.swift; sourceTree = "<group>"; };
 		AD87D83D1E5F8E9F0055C116 /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
 		AD87D83F1E5F8ED30055C116 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
-		AD87D8411E5F972F0055C116 /* NumberInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberInputCell.swift; sourceTree = "<group>"; };
-		AD87D8431E5F974D0055C116 /* NumberInputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumberInputCell.xib; sourceTree = "<group>"; };
-		AD87D84A1E6034550055C116 /* SubscriptionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionList.swift; path = Subscriber/SubscriptionList/SubscriptionList.swift; sourceTree = "<group>"; };
+		AD87D8411E5F972F0055C116 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
+		AD87D8431E5F974D0055C116 /* InputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
+		AD87D84A1E6034550055C116 /* SubscriptionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionHandler.swift; path = Subscriber/SubscriptionList/SubscriptionHandler.swift; sourceTree = "<group>"; };
 		AD87D84B1E6034550055C116 /* SubscriptionListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionListPresenter.swift; path = Subscriber/SubscriptionList/SubscriptionListPresenter.swift; sourceTree = "<group>"; };
 		AD87D8501E60374B0055C116 /* SubscriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubscriptionCell.xib; path = Cells/SubscriptionCell.xib; sourceTree = "<group>"; };
 		AD87D8521E60380E0055C116 /* SubscriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionCell.swift; path = Cells/SubscriptionCell.swift; sourceTree = "<group>"; };
-		AD87D8541E6045620055C116 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		AD87D8541E6045620055C116 /* Rounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rounding.swift; sourceTree = "<group>"; };
 		AD8B00661E5CA50300D6A17E /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		AD8B3DDE1E631DE600606E04 /* SubscriptionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionType.swift; path = ../../SubscriptionType.swift; sourceTree = "<group>"; };
 		AD8B3DE01E631FB300606E04 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Circle.swift; path = Subscriber/Circle.swift; sourceTree = "<group>"; };
 		AD8B3DE31E6332D700606E04 /* SubscriptionCreationPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionCreationPresentable.swift; sourceTree = "<group>"; };
 		AD8B3DE41E6332D700606E04 /* SubscriptionCreationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionCreationPresenter.swift; sourceTree = "<group>"; };
+		AD8B3DE71E6339FD00606E04 /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Subscription.swift; path = Subscriber/SubscriptionList/Subscription.swift; sourceTree = "<group>"; };
+		AD8B3DEA1E6350D300606E04 /* SensorsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensorsPresenter.swift; path = Publisher/SensorsPresenter.swift; sourceTree = "<group>"; };
+		AD8B3DEC1E6358C500606E04 /* AudioRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioRecorder.swift; path = Publisher/AudioRecorder.swift; sourceTree = "<group>"; };
 		ADD699CC1E5DE24500D12C11 /* LongPressHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LongPressHandler.swift; path = Subscriber/LongPressHandler.swift; sourceTree = "<group>"; };
 		ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCircleDrawer.swift; path = Subscriber/MapCircleDrawer.swift; sourceTree = "<group>"; };
 		ADD699D01E5DE35F00D12C11 /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
@@ -145,12 +167,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AD10FB8E1E661BF200E9F700 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AD10FB8F1E661C0C00E9F700 /* SettingsPresenter.swift */,
+				AD10FB911E66258500E9F700 /* SearchViewController.swift */,
+				AD10FB931E6628D000E9F700 /* SettingsPresentable.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		AD4EDD571E65FF540047C788 /* AudioSensor */ = {
+			isa = PBXGroup;
+			children = (
+				AD4EDD5C1E6605E90047C788 /* AudioSensor.swift */,
+				AD4EDD5D1E6605E90047C788 /* AudioSensor.xib */,
+				AD10FB8B1E660B2400E9F700 /* AudioPresenter.swift */,
+			);
+			name = AudioSensor;
+			sourceTree = "<group>";
+		};
 		AD87D8321E5F7E860055C116 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				AD87D8331E5F7E9F0055C116 /* Identifiable.swift */,
 				AD87D8351E5F7F6F0055C116 /* ViewController.swift */,
-				AD87D8541E6045620055C116 /* Double.swift */,
+				AD87D8541E6045620055C116 /* Rounding.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -159,7 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				AD87D84B1E6034550055C116 /* SubscriptionListPresenter.swift */,
-				AD87D84A1E6034550055C116 /* SubscriptionList.swift */,
+				AD87D84A1E6034550055C116 /* SubscriptionHandler.swift */,
+				AD8B3DE71E6339FD00606E04 /* Subscription.swift */,
 			);
 			name = SubscriptionList;
 			sourceTree = "<group>";
@@ -171,10 +214,12 @@
 				AD87D82F1E5F7DF60055C116 /* BasicCell.xib */,
 				AD87D83F1E5F8ED30055C116 /* ButtonCell.swift */,
 				AD87D83D1E5F8E9F0055C116 /* ButtonCell.xib */,
-				AD87D8411E5F972F0055C116 /* NumberInputCell.swift */,
-				AD87D8431E5F974D0055C116 /* NumberInputCell.xib */,
+				AD87D8411E5F972F0055C116 /* InputCell.swift */,
+				AD87D8431E5F974D0055C116 /* InputCell.xib */,
 				AD87D8521E60380E0055C116 /* SubscriptionCell.swift */,
 				AD87D8501E60374B0055C116 /* SubscriptionCell.xib */,
+				AD4EDD551E65FA5E0047C788 /* SensorCell.swift */,
+				AD4EDD531E65FA140047C788 /* SensorCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -188,6 +233,16 @@
 			);
 			name = SubscriptionCreation;
 			path = Subscriber/SubscriptionCreation;
+			sourceTree = "<group>";
+		};
+		AD8B3DE91E6350A500606E04 /* Publisher */ = {
+			isa = PBXGroup;
+			children = (
+				AD4EDD571E65FF540047C788 /* AudioSensor */,
+				AD8B3DEA1E6350D300606E04 /* SensorsPresenter.swift */,
+				AD8B3DEC1E6358C500606E04 /* AudioRecorder.swift */,
+			);
+			name = Publisher;
 			sourceTree = "<group>";
 		};
 		ADF59E7E1E5C90AB007A0BAB = {
@@ -215,6 +270,8 @@
 		ADF59E891E5C90AB007A0BAB /* CUPUS */ = {
 			isa = PBXGroup;
 			children = (
+				AD10FB8E1E661BF200E9F700 /* Settings */,
+				AD8B3DE91E6350A500606E04 /* Publisher */,
 				AD87D84E1E60345B0055C116 /* Cells */,
 				AD87D8321E5F7E860055C116 /* Protocol */,
 				ADF59EBB1E5C9425007A0BAB /* Subscriber */,
@@ -404,7 +461,9 @@
 			files = (
 				ADF59E951E5C90AB007A0BAB /* LaunchScreen.storyboard in Resources */,
 				AD87D8301E5F7DF60055C116 /* BasicCell.xib in Resources */,
-				AD87D8441E5F974D0055C116 /* NumberInputCell.xib in Resources */,
+				AD4EDD541E65FA140047C788 /* SensorCell.xib in Resources */,
+				AD87D8441E5F974D0055C116 /* InputCell.xib in Resources */,
+				AD4EDD5F1E6605E90047C788 /* AudioSensor.xib in Resources */,
 				ADF59E921E5C90AB007A0BAB /* Assets.xcassets in Resources */,
 				AD87D8511E60374B0055C116 /* SubscriptionCell.xib in Resources */,
 				AD87D83E1E5F8E9F0055C116 /* ButtonCell.xib in Resources */,
@@ -570,26 +629,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD10FB921E66258500E9F700 /* SearchViewController.swift in Sources */,
 				ADF59EBD1E5C9459007A0BAB /* SubscriberViewController.swift in Sources */,
 				AD87D8341E5F7E9F0055C116 /* Identifiable.swift in Sources */,
 				ADF59EBF1E5C94A8007A0BAB /* BaseViewController.swift in Sources */,
 				AD87D84D1E6034550055C116 /* SubscriptionListPresenter.swift in Sources */,
+				AD8B3DE81E6339FD00606E04 /* Subscription.swift in Sources */,
 				AD8B00671E5CA50300D6A17E /* LocationManager.swift in Sources */,
 				ADD699D11E5DE35F00D12C11 /* AlertHandler.swift in Sources */,
 				AD87D8291E5F7C050055C116 /* TableViewController.swift in Sources */,
 				ADD699CE1E5DE24500D12C11 /* LongPressHandler.swift in Sources */,
 				AD8B3DE61E6332D700606E04 /* SubscriptionCreationPresenter.swift in Sources */,
+				AD10FB941E6628D000E9F700 /* SettingsPresentable.swift in Sources */,
 				ADD699CF1E5DE24500D12C11 /* MapCircleDrawer.swift in Sources */,
-				AD87D8421E5F972F0055C116 /* NumberInputCell.swift in Sources */,
+				AD4EDD5E1E6605E90047C788 /* AudioSensor.swift in Sources */,
+				AD87D8421E5F972F0055C116 /* InputCell.swift in Sources */,
+				AD10FB901E661C0C00E9F700 /* SettingsPresenter.swift in Sources */,
 				AD87D8401E5F8ED30055C116 /* ButtonCell.swift in Sources */,
 				AD87D8361E5F7F6F0055C116 /* ViewController.swift in Sources */,
+				AD8B3DED1E6358C500606E04 /* AudioRecorder.swift in Sources */,
+				AD4EDD561E65FA5E0047C788 /* SensorCell.swift in Sources */,
+				AD10FB8C1E660B2400E9F700 /* AudioPresenter.swift in Sources */,
+				AD8B3DEB1E6350D300606E04 /* SensorsPresenter.swift in Sources */,
 				ADF59EBA1E5C91C9007A0BAB /* TabViewController.swift in Sources */,
 				AD87D8531E60380E0055C116 /* SubscriptionCell.swift in Sources */,
-				AD87D84C1E6034550055C116 /* SubscriptionList.swift in Sources */,
+				AD87D84C1E6034550055C116 /* SubscriptionHandler.swift in Sources */,
 				AD8B3DDF1E631DE600606E04 /* SubscriptionType.swift in Sources */,
 				AD8B3DE11E631FB300606E04 /* Circle.swift in Sources */,
 				AD87D82E1E5F7DCB0055C116 /* BasicCell.swift in Sources */,
-				AD87D8551E6045620055C116 /* Double.swift in Sources */,
+				AD87D8551E6045620055C116 /* Rounding.swift in Sources */,
 				AD8B3DE51E6332D700606E04 /* SubscriptionCreationPresentable.swift in Sources */,
 				ADF59E8B1E5C90AB007A0BAB /* AppDelegate.swift in Sources */,
 			);
