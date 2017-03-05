@@ -53,7 +53,7 @@ extension SensorsPresenter {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            tableViewController?.navigationController?.pushViewController(AudioSensor(nibName: AudioSensor.identifier, bundle: nil), animated: true)
+            tableViewController?.navigationController?.pushViewController(AudioSensorViewController(nibName: AudioSensorViewController.identifier, bundle: nil), animated: true)
         default:
             break
         }

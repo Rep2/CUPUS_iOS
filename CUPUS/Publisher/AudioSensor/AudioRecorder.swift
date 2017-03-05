@@ -30,8 +30,8 @@ class AudioRecorder {
         }
     }
     
-    private let ps:Float = 20/1000000
-    private let kal:Float = 5
+    private let ps: Float = 20/1000000
+    private let kal: Float = 5
     
     func recorde(readPeriod: Double) -> Observable<Float> {
         return isAvaliable

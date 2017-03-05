@@ -1,15 +1,9 @@
 import UIKit
 
-class InputCellPresentable {
-    let title: String
-    var input: String
-    let inputViewDidChange: (String) -> Void
-    
-    init(title: String, input: String, inputViewDidChange: @escaping (String) -> Void) {
-        self.title = title
-        self.input = input
-        self.inputViewDidChange = inputViewDidChange
-    }
+protocol InputCellPresentable {
+    var title: String { get }
+    var input: String { get }
+    var inputViewDidChange: (String) -> String { get }
 }
 
 class InputCell: UITableViewCell, Identifiable {
@@ -43,7 +37,7 @@ class InputCell: UITableViewCell, Identifiable {
     }
     
     @IBAction func inputViewChanged(_ sender: Any) {
-        presentable?.inputViewDidChange(input.text ?? "")
+        input.text = presentable?.inputViewDidChange(input.text ?? "")
     }
     
 }

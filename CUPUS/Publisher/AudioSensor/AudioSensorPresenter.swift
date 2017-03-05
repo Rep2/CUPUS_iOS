@@ -8,9 +8,9 @@ struct AudioSensorPresentable {
     let timeSinceStart: Double
 }
 
-class AudioPresenter {
+class AudioSensorPresenter {
     
-    static let sharedInstance = AudioPresenter()
+    static let sharedInstance = AudioSensorPresenter()
     
     let recievedNewValue = PublishSubject<AudioSensorPresentable>()
     
@@ -20,6 +20,7 @@ class AudioPresenter {
     var maximumValue: Float?
     var minimumValue: Float?
     var timeSinceStart: Double?
+    
     private var startTime: Date?
     
     var disposable: Disposable?
@@ -35,7 +36,7 @@ class AudioPresenter {
             startTime = Date()
             timeSinceStart = 0
             
-            disposable = AudioRecorder.sharedInstance.recorde(readPeriod: SettingsPresenter.sharedInstance.readPeriod)
+            disposable = AudioRecorder.sharedInstance.recorde(readPeriod: SettingsPresenter.sharedInstance.settings.readPeriod)
                 .subscribe(
                     onNext: { value in
                         self.currentValue = value

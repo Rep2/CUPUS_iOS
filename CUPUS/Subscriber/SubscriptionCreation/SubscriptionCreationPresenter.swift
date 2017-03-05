@@ -62,7 +62,7 @@ extension SubscriptionCreationPresenter: TableViewDelegate {
                 subscriptionType = .follow(radiusInMeters: Double(value))
             } else {
                 if let cell = tableViewController?.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? InputCell {
-                    cell.set(presentable: InputCellPresentable(title: "Radius pretplate u metrima", input: String(Int(radius)), inputViewDidChange: radiusChanged))
+                 //   cell.set(presentable: InputCellPresentable(title: "Radius pretplate u metrima", input: String(Int(radius)), inputViewDidChange: radiusChanged))
                 }
             }
         }
@@ -99,7 +99,7 @@ extension SubscriptionCreationPresenter {
             cell = tableView.dequeueReusableCell(withIdentifier: InputCell.identifier, for: indexPath)
             
             if let cell = cell as? InputCell {
-                cell.set(presentable: InputCellPresentable(title: "Radius pretplate u metrima", input: String(Int(radius)), inputViewDidChange: radiusChanged))
+                //cell.set(presentable: InputCellPresentable(title: "Radius pretplate u metrima", input: String(Int(radius)), inputViewDidChange: radiusChanged))
             }
         case (.follow, 1), (.pick, 0):
             cell = tableView.dequeueReusableCell(withIdentifier: BasicCell.identifier, for: indexPath)
