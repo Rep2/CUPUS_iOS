@@ -18,7 +18,7 @@ extension SubscriptionListPresenter: TableViewDelegate {
     func viewDidLoad() {
         tableViewController?.tableView.register(UINib(nibName: SubscriptionCell.identifier, bundle: nil), forCellReuseIdentifier: SubscriptionCell.identifier)
         
-        tableViewController?.title = "Pretplate"
+        tableViewController?.title = "Subscriptions"
         
         tableViewController?.tableView.allowsMultipleSelectionDuringEditing = false
     }

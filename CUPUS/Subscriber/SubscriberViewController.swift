@@ -52,7 +52,7 @@ class SubscriberViewController: BaseViewController {
     }
     
     func createMap() {
-        let location = LocationManager.sharedInstance.location
+        let location = LocationManager.sharedInstance.location.value ?? CLLocation(latitude: 45.8144400, longitude: 15.9779800)
         
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 12.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
@@ -79,7 +79,7 @@ class SubscriberViewController: BaseViewController {
     }
     
     func plusPressed() {
-        presentAlert(title: "Odaberite tip pretplate", actions: [
+        presentAlert(title: "Select subscription type", actions: [
             UIAlertAction(title: "Follow", style: .default, handler: { _ in
                 self.pushNewSubscription(subscriptionType: .follow(radiusInMeters: 100))
             }),
@@ -88,7 +88,7 @@ class SubscriberViewController: BaseViewController {
                 
                 self.navigationItem.rightBarButtonItems = [self.cancleButton]
             }),
-            UIAlertAction(title: "Odustani", style: .cancel),
+            UIAlertAction(title: "Cancle", style: .cancel),
             ])
     }
     

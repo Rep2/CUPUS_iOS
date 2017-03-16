@@ -4,27 +4,10 @@ import RxSwift
 class SensorsPresenter: NSObject {
     
     weak var tableViewController: TableViewController?
-    
-    var audioAvailable = false
+
+    var isRecording = false
     
     let disposeBag = DisposeBag()
-    
-    override init() {
-        super.init()
-        
-        AudioRecorder.sharedInstance.isAvaliable
-            .subscribe { [weak self] event in
-                guard let strongSelf = self else { return }
-                
-                switch event {
-                case .next(let value):
-                    strongSelf.audioAvailable = value
-                    strongSelf.reloadData()
-                default:
-                    break
-                }
-            }.addDisposableTo(disposeBag)
-    }
     
     static func create() -> (SensorsPresenter, TableViewController) {
         let presenter = SensorsPresenter()
@@ -46,6 +29,10 @@ extension SensorsPresenter: TableViewDelegate {
         
         tableViewController?.title = "Sensors"
     }
+    
+    func viewWillAppear() {
+        reloadData()
+    }
 }
 
 extension SensorsPresenter {
@@ -62,11 +49,10 @@ extension SensorsPresenter {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SensorCell.identifier, for: indexPath)
-        
-        if let cell = cell as? SensorCell {
-            cell.set(presentable: SensorCellPresentable(title: "Noise sensor", details: "Not active", value: nil))
-        }
+        let cell: SensorCell = tableView.dequeCell(for: indexPath)
+
+        let details = AudioSensorPresenter.sharedInstance.isRecording ? "Active" : "Not active"
+        cell.set(presentable: SensorCellPresentable(title: "Audio sensor", details: details, value: nil))
         
         return cell
     }

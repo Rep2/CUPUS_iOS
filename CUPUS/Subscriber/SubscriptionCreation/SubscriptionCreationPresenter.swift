@@ -30,7 +30,7 @@ extension SubscriptionCreationPresenter: TableViewDelegate {
         tableViewController?.tableView.register(UINib(nibName: ButtonCell.identifier, bundle: nil), forCellReuseIdentifier: ButtonCell.identifier)
         tableViewController?.tableView.register(UINib(nibName: InputCell.identifier, bundle: nil), forCellReuseIdentifier: InputCell.identifier)
         
-        tableViewController?.title = "Odabir pretplate"
+        tableViewController?.title = "New subscription"
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SubscriptionCreationPresenter.backgroundPressed))
         gestureRecognizer.cancelsTouchesInView = false
@@ -45,7 +45,7 @@ extension SubscriptionCreationPresenter: TableViewDelegate {
         let slectedTypes = presentable.subscriptionTypes.filter { $0.selected }.map { $0.title }
         
         if slectedTypes.count == 0 {
-            tableViewController?.presentAlert(title: "Odaberite barem jedan tip pretplate", actions: [
+            tableViewController?.presentAlert(title: "Select at least one subscription type", actions: [
                     UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 ])
         } else {
@@ -56,16 +56,18 @@ extension SubscriptionCreationPresenter: TableViewDelegate {
     }
     
     
-    func radiusChanged(value: String) {
+    func radiusChanged(value: String) -> String {
+        var returnValue = value
+        
         if case .follow(let radius) = subscriptionType {
             if let value = Int(value), value > 0 {
                 subscriptionType = .follow(radiusInMeters: Double(value))
             } else {
-                if let cell = tableViewController?.tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? InputCell {
-                 //   cell.set(presentable: InputCellPresentable(title: "Radius pretplate u metrima", input: String(Int(radius)), inputViewDidChange: radiusChanged))
-                }
+                returnValue = String(Int(radius))
             }
         }
+        
+        return returnValue
     }
 }
 
@@ -99,7 +101,7 @@ extension SubscriptionCreationPresenter {
             cell = tableView.dequeueReusableCell(withIdentifier: InputCell.identifier, for: indexPath)
             
             if let cell = cell as? InputCell {
-                //cell.set(presentable: InputCellPresentable(title: "Radius pretplate u metrima", input: String(Int(radius)), inputViewDidChange: radiusChanged))
+                cell.set(presentable: InputCellPresentableBasic(title: "Radius pretplate u metrima", input: String(Int(radius)), inputViewDidChange: radiusChanged))
             }
         case (.follow, 1), (.pick, 0):
             cell = tableView.dequeueReusableCell(withIdentifier: BasicCell.identifier, for: indexPath)

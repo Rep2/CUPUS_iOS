@@ -45,6 +45,7 @@
 		ADD699CE1E5DE24500D12C11 /* LongPressHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699CC1E5DE24500D12C11 /* LongPressHandler.swift */; };
 		ADD699CF1E5DE24500D12C11 /* MapCircleDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */; };
 		ADD699D11E5DE35F00D12C11 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699D01E5DE35F00D12C11 /* AlertHandler.swift */; };
+		ADE04A811E7A1D7000972A8C /* FIleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE04A801E7A1D7000972A8C /* FIleWriter.swift */; };
 		ADF59E8B1E5C90AB007A0BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF59E8A1E5C90AB007A0BAB /* AppDelegate.swift */; };
 		ADF59E921E5C90AB007A0BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF59E911E5C90AB007A0BAB /* Assets.xcassets */; };
 		ADF59E951E5C90AB007A0BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF59E931E5C90AB007A0BAB /* LaunchScreen.storyboard */; };
@@ -117,6 +118,7 @@
 		ADD699CC1E5DE24500D12C11 /* LongPressHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LongPressHandler.swift; path = Subscriber/LongPressHandler.swift; sourceTree = "<group>"; };
 		ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCircleDrawer.swift; path = Subscriber/MapCircleDrawer.swift; sourceTree = "<group>"; };
 		ADD699D01E5DE35F00D12C11 /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
+		ADE04A801E7A1D7000972A8C /* FIleWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FIleWriter.swift; path = Extensions/FIleWriter.swift; sourceTree = "<group>"; };
 		ADF59E871E5C90AB007A0BAB /* CUPUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CUPUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF59E8A1E5C90AB007A0BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADF59E911E5C90AB007A0BAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				ADCBE8C01E68D13B0094AB09 /* UITableView.swift */,
+				ADE04A801E7A1D7000972A8C /* FIleWriter.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				AD87D8551E6045620055C116 /* Rounding.swift in Sources */,
 				AD8B3DE51E6332D700606E04 /* SubscriptionCreationPresentable.swift in Sources */,
 				ADF59E8B1E5C90AB007A0BAB /* AppDelegate.swift in Sources */,
+				ADE04A811E7A1D7000972A8C /* FIleWriter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

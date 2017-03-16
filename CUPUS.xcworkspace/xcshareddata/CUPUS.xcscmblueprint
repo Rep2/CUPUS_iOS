@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BC6B538541D73B7E94ECC9C9ED6BF81CF5275574",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BC6B538541D73B7E94ECC9C9ED6BF81CF5275574" : 9223372036854775807,
+    "6922AE35AA0C19EB5290FDB61D5250FD2FB64D09" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "ADC5C0C3-B4C5-4BFA-A18A-9C4C0EBE75FA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BC6B538541D73B7E94ECC9C9ED6BF81CF5275574" : "CUPUS\/",
+    "6922AE35AA0C19EB5290FDB61D5250FD2FB64D09" : "CUPUS_iOS_MobileBroker\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CUPUS",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CUPUS.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Rep2\/CUPUS_iOS_mobile_broker.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6922AE35AA0C19EB5290FDB61D5250FD2FB64D09"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Rep2\/CUPUS_iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BC6B538541D73B7E94ECC9C9ED6BF81CF5275574"
+    }
+  ]
+}

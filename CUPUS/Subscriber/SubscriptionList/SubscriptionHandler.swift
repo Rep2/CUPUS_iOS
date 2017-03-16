@@ -37,4 +37,7 @@ class SubscriptionHandler {
         }
     }
 
+    func connectSubscriber() {
+        
+    }
 }

@@ -49,7 +49,7 @@ class AudioSensorViewController: UIViewController, Identifiable {
     }
     
     func updateReadIntervalText() {
-         readInterval.text = "Read interval: \(SettingsPresenter.sharedInstance.settings.readPeriod)"
+         readInterval.text = "Read interval: \(AudioSensorPresenter.sharedInstance.readPeriod)"
     }
     
     func updateValues() {

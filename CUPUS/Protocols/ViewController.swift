@@ -1,5 +1,6 @@
 protocol ViewController {
     func viewDidLoad()
+    func viewWillAppear()
     func viewDidAppear()
 }
 

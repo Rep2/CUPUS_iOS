@@ -6,6 +6,12 @@ protocol InputCellPresentable {
     var inputViewDidChange: (String) -> String { get }
 }
 
+struct InputCellPresentableBasic: InputCellPresentable {
+    let title: String
+    let input: String
+    let inputViewDidChange: (String) -> String
+}
+
 class InputCell: UITableViewCell, Identifiable {
     
     @IBOutlet weak var title: UILabel!

@@ -6,7 +6,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow? = UIWindow()
 
-    let googleAPIKey = "AIzaSyDeCppDm-gsPzKfnBho1ihJxBsROVg-Vr0"
+    let googleAPIKey = "AIzaSyBhp9R3HqNSdI92C5CMAvV6gEUDlDenKGc"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -17,6 +17,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
 }
-
