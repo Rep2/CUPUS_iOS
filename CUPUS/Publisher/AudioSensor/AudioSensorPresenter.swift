@@ -71,7 +71,7 @@ class AudioSensorPresenter {
     
     let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm:ss.SSSS"
         
         return dateFormatter
     }()
