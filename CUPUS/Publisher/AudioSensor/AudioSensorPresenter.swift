@@ -26,6 +26,9 @@ class AudioSensorPresenter {
     var readPeriod = SettingsPresenter.sharedInstance.settings.readPeriod
     
     var disposable: Disposable?
+
+    private let ps: Float = 20/1000000
+    private let kal: Float = 5
     
     func stateChanged(on: Bool) {
         if on && !isRecording {
@@ -42,7 +45,9 @@ class AudioSensorPresenter {
             
             disposable = AudioRecorder.sharedInstance.recorde(readPeriod: SettingsPresenter.sharedInstance.settings.readPeriod)
                 .subscribe(
-                    onNext: { value in
+                    onNext: { rawValue in
+                        let value = 20 * log10(pow(10, (rawValue/20)) / self.ps) + self.kal
+
                         self.currentValue = value
                         
                         if self.maximumValue == nil || value > self.maximumValue! {
@@ -57,7 +62,7 @@ class AudioSensorPresenter {
                             self.timeSinceStart = Date().timeIntervalSince(startTime)
                         }
                         
-                       self.writeToLog(value: value, date: Date())
+                       self.writeToLog(rawValue: rawValue, value: value, date: Date())
                         
                         self.recievedNewValue.onNext(AudioSensorPresentable(currentValue: self.currentValue!, maximumValue: self.maximumValue!, minimumValue: self.minimumValue!, timeSinceStart: self.timeSinceStart!))
                 }
@@ -76,12 +81,12 @@ class AudioSensorPresenter {
         return dateFormatter
     }()
     
-    func writeToLog(value: Float, date: Date) {
+    func writeToLog(rawValue: Float, value: Float, date: Date) {
         let directory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last! as NSURL
         let logURL = directory.appendingPathComponent("CUPUSAudioRecordingLog.txt")!
         
         do {
-            try "\(dateFormatter.string(from: date)) value: \(value)".writeLine(to: logURL)
+            try "\(dateFormatter.string(from: date)) rawValue: \(rawValue) finalValue: \(value)".writeLine(to: logURL)
         } catch {
             print("Failed to write to log")
         }

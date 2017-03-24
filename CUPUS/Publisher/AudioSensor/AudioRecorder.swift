@@ -30,9 +30,6 @@ class AudioRecorder {
         }
     }
     
-    private let ps: Float = 20/1000000
-    private let kal: Float = 5
-    
     func recorde(readPeriod: Double) -> Observable<Float> {
         return isAvaliable
             .filter { $0 }
@@ -60,9 +57,7 @@ class AudioRecorder {
                             
                             let value = recorder.averagePower(forChannel: 0)
                             
-                            let SPL = 20 * log10(pow(10, (value/20)) / self.ps) + self.kal
-                            
-                            observable.onNext(SPL)
+                            observable.onNext(value)
                         })
                         
                         return Disposables.create {
