@@ -29,6 +29,7 @@
 		AD4EDD561E65FA5E0047C788 /* SensorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EDD551E65FA5E0047C788 /* SensorCell.swift */; };
 		AD4EDD5E1E6605E90047C788 /* AudioSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EDD5C1E6605E90047C788 /* AudioSensorViewController.swift */; };
 		AD4EDD5F1E6605E90047C788 /* AudioSensorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4EDD5D1E6605E90047C788 /* AudioSensorViewController.xib */; };
+		AD5716061E86A6C5006D54A0 /* LocationWithDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5716051E86A6C5006D54A0 /* LocationWithDistance.swift */; };
 		AD87D8291E5F7C050055C116 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8281E5F7C050055C116 /* TableViewController.swift */; };
 		AD87D8341E5F7E9F0055C116 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8331E5F7E9F0055C116 /* Identifiable.swift */; };
 		AD87D8361E5F7F6F0055C116 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87D8351E5F7F6F0055C116 /* ViewController.swift */; };
@@ -114,6 +115,7 @@
 		AD4EDD551E65FA5E0047C788 /* SensorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensorCell.swift; path = Cells/SensorCell.swift; sourceTree = "<group>"; };
 		AD4EDD5C1E6605E90047C788 /* AudioSensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioSensorViewController.swift; path = Publisher/AudioSensor/AudioSensorViewController.swift; sourceTree = "<group>"; };
 		AD4EDD5D1E6605E90047C788 /* AudioSensorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AudioSensorViewController.xib; path = Publisher/AudioSensor/AudioSensorViewController.xib; sourceTree = "<group>"; };
+		AD5716051E86A6C5006D54A0 /* LocationWithDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationWithDistance.swift; path = Extensions/LocationWithDistance.swift; sourceTree = "<group>"; };
 		AD87D8281E5F7C050055C116 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		AD87D8331E5F7E9F0055C116 /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Identifiable.swift; path = Protocols/Identifiable.swift; sourceTree = "<group>"; };
 		AD87D8351E5F7F6F0055C116 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Protocols/ViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				ADCBE8C01E68D13B0094AB09 /* UITableView.swift */,
 				ADE04A801E7A1D7000972A8C /* FIleWriter.swift */,
 				AD16AAF01E8675AC003F8C70 /* TCPClient.swift */,
+				AD5716051E86A6C5006D54A0 /* LocationWithDistance.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -457,7 +460,6 @@
 				ADF59E991E5C90AB007A0BAB /* Resources */,
 				BA1C4E0505655F352ED14A67 /* [CP] Embed Pods Frameworks */,
 				24446770031ABA750B3C91C8 /* [CP] Copy Pods Resources */,
-				AD16AAD11E855139003F8C70 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -662,21 +664,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		AD16AAD11E855139003F8C70 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/CUPUS_iOS_mobile_broker.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		AF08A06FCF06FC76441B0581 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -756,6 +743,7 @@
 				ADCBE8C11E68D13B0094AB09 /* UITableView.swift in Sources */,
 				AD4EDD5E1E6605E90047C788 /* AudioSensorViewController.swift in Sources */,
 				AD10FB901E661C0C00E9F700 /* SettingsPresenter.swift in Sources */,
+				AD5716061E86A6C5006D54A0 /* LocationWithDistance.swift in Sources */,
 				AD8D8A5F1E6CB8950000C760 /* InputCell.swift in Sources */,
 				AD87D8361E5F7F6F0055C116 /* ViewController.swift in Sources */,
 				AD4EDD561E65FA5E0047C788 /* SensorCell.swift in Sources */,

@@ -47,7 +47,7 @@ class Subscriber {
         }
     }
 
-    static func subscribe(ip: String, port: Int32, geometry: Geometry?, predicates: [Predicate], callback: @escaping (Result) -> Void, newPublicationCallback: @escaping ([Byte]?) -> Void) {
+    static func subscribe(ip: String, port: Int32, geometry: Geometry?, predicates: [Predicate], callback: @escaping (Result) -> Void, newPublicationCallback: @escaping (ValueResult<Payload>) -> Void) {
 
         Subscriber.clientFor(ip: ip, port: port) { clientResult in
             switch clientResult {
@@ -61,7 +61,17 @@ class Subscriber {
                     client.asyncSend(data: data, callback: { subscribeResult in
                         switch subscribeResult {
                         case .success:
-                            client.asyncRead(callback: newPublicationCallback)
+                            client.asyncRead(callback: { bytes in
+                                if let bytes = bytes, let json = try? JSONSerialization.jsonObject(with: Data(bytes: bytes), options: .allowFragments), let jsonDict = json as? [String: Any] {
+                                    if let payload = try? Payload.fromBaseJSON(json: jsonDict) {
+                                        newPublicationCallback(.success(value: payload))
+
+                                        return
+                                    }
+                                }
+
+                                newPublicationCallback(.failure(error: JSONError.objectParsingFailed))
+                            })
                         case .failure(let error):
                             callback(Result.failure(error))
                         }
