@@ -14,6 +14,17 @@
 		AD10FB901E661C0C00E9F700 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD10FB8F1E661C0C00E9F700 /* SettingsPresenter.swift */; };
 		AD10FB921E66258500E9F700 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD10FB911E66258500E9F700 /* SettingsViewController.swift */; };
 		AD10FB941E6628D000E9F700 /* SettingsPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD10FB931E6628D000E9F700 /* SettingsPresentable.swift */; };
+		AD16AAE51E855D6F003F8C70 /* BaseMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16AAD71E855D6F003F8C70 /* BaseMessage.swift */; };
+		AD16AAE61E855D6F003F8C70 /* CUPUSMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16AAD81E855D6F003F8C70 /* CUPUSMessages.swift */; };
+		AD16AAE71E855D6F003F8C70 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16AAD91E855D6F003F8C70 /* Geometry.swift */; };
+		AD16AAE81E855D6F003F8C70 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16AADA1E855D6F003F8C70 /* JSON.swift */; };
+		AD16AAE91E855D6F003F8C70 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16AADB1E855D6F003F8C70 /* Payload.swift */; };
+		AD16AAEA1E855D6F003F8C70 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16AADC1E855D6F003F8C70 /* Predicate.swift */; };
+		AD16AAEB1E855D6F003F8C70 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16AADD1E855D6F003F8C70 /* Property.swift */; };
+		AD16AAEC1E855D6F003F8C70 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16AADE1E855D6F003F8C70 /* Result.swift */; };
+		AD16AAED1E855D6F003F8C70 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16AAE11E855D6F003F8C70 /* Publisher.swift */; };
+		AD16AAEE1E855D6F003F8C70 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16AAE31E855D6F003F8C70 /* Subscriber.swift */; };
+		AD16AAF11E8675AC003F8C70 /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD16AAF01E8675AC003F8C70 /* TCPClient.swift */; };
 		AD4EDD541E65FA140047C788 /* SensorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD4EDD531E65FA140047C788 /* SensorCell.xib */; };
 		AD4EDD561E65FA5E0047C788 /* SensorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EDD551E65FA5E0047C788 /* SensorCell.swift */; };
 		AD4EDD5E1E6605E90047C788 /* AudioSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EDD5C1E6605E90047C788 /* AudioSensorViewController.swift */; };
@@ -87,6 +98,18 @@
 		AD10FB8F1E661C0C00E9F700 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsPresenter.swift; path = Settings/SettingsPresenter.swift; sourceTree = "<group>"; };
 		AD10FB911E66258500E9F700 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Settings/SettingsViewController.swift; sourceTree = "<group>"; };
 		AD10FB931E6628D000E9F700 /* SettingsPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsPresentable.swift; path = Settings/SettingsPresentable.swift; sourceTree = "<group>"; };
+		AD16AAD71E855D6F003F8C70 /* BaseMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMessage.swift; sourceTree = "<group>"; };
+		AD16AAD81E855D6F003F8C70 /* CUPUSMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CUPUSMessages.swift; sourceTree = "<group>"; };
+		AD16AAD91E855D6F003F8C70 /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		AD16AADA1E855D6F003F8C70 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		AD16AADB1E855D6F003F8C70 /* Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		AD16AADC1E855D6F003F8C70 /* Predicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predicate.swift; sourceTree = "<group>"; };
+		AD16AADD1E855D6F003F8C70 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		AD16AADE1E855D6F003F8C70 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		AD16AADF1E855D6F003F8C70 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		AD16AAE11E855D6F003F8C70 /* Publisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		AD16AAE31E855D6F003F8C70 /* Subscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
+		AD16AAF01E8675AC003F8C70 /* TCPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TCPClient.swift; path = Extensions/TCPClient.swift; sourceTree = "<group>"; };
 		AD4EDD531E65FA140047C788 /* SensorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SensorCell.xib; path = Cells/SensorCell.xib; sourceTree = "<group>"; };
 		AD4EDD551E65FA5E0047C788 /* SensorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensorCell.swift; path = Cells/SensorCell.swift; sourceTree = "<group>"; };
 		AD4EDD5C1E6605E90047C788 /* AudioSensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioSensorViewController.swift; path = Publisher/AudioSensor/AudioSensorViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +207,48 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		AD16AAD21E855D6F003F8C70 /* CUPUSMobileBroker */ = {
+			isa = PBXGroup;
+			children = (
+				AD16AAD61E855D6F003F8C70 /* Models */,
+				AD16AADF1E855D6F003F8C70 /* module.modulemap */,
+				AD16AAE01E855D6F003F8C70 /* Publisher */,
+				AD16AAE21E855D6F003F8C70 /* Subscriber */,
+			);
+			path = CUPUSMobileBroker;
+			sourceTree = "<group>";
+		};
+		AD16AAD61E855D6F003F8C70 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD16AAD71E855D6F003F8C70 /* BaseMessage.swift */,
+				AD16AAD81E855D6F003F8C70 /* CUPUSMessages.swift */,
+				AD16AAD91E855D6F003F8C70 /* Geometry.swift */,
+				AD16AADA1E855D6F003F8C70 /* JSON.swift */,
+				AD16AADB1E855D6F003F8C70 /* Payload.swift */,
+				AD16AADC1E855D6F003F8C70 /* Predicate.swift */,
+				AD16AADD1E855D6F003F8C70 /* Property.swift */,
+				AD16AADE1E855D6F003F8C70 /* Result.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AD16AAE01E855D6F003F8C70 /* Publisher */ = {
+			isa = PBXGroup;
+			children = (
+				AD16AAE11E855D6F003F8C70 /* Publisher.swift */,
+			);
+			path = Publisher;
+			sourceTree = "<group>";
+		};
+		AD16AAE21E855D6F003F8C70 /* Subscriber */ = {
+			isa = PBXGroup;
+			children = (
+				AD16AAE31E855D6F003F8C70 /* Subscriber.swift */,
+			);
+			path = Subscriber;
+			sourceTree = "<group>";
+		};
 		AD4EDD571E65FF540047C788 /* AudioSensor */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +322,7 @@
 			children = (
 				ADCBE8C01E68D13B0094AB09 /* UITableView.swift */,
 				ADE04A801E7A1D7000972A8C /* FIleWriter.swift */,
+				AD16AAF01E8675AC003F8C70 /* TCPClient.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -286,6 +352,7 @@
 		ADF59E891E5C90AB007A0BAB /* CUPUS */ = {
 			isa = PBXGroup;
 			children = (
+				AD16AAD21E855D6F003F8C70 /* CUPUSMobileBroker */,
 				ADCBE8BF1E68D1230094AB09 /* Extensions */,
 				AD10FB8E1E661BF200E9F700 /* Settings */,
 				AD8B3DE91E6350A500606E04 /* Publisher */,
@@ -390,6 +457,7 @@
 				ADF59E991E5C90AB007A0BAB /* Resources */,
 				BA1C4E0505655F352ED14A67 /* [CP] Embed Pods Frameworks */,
 				24446770031ABA750B3C91C8 /* [CP] Copy Pods Resources */,
+				AD16AAD11E855139003F8C70 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -594,6 +662,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		AD16AAD11E855139003F8C70 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CUPUS_iOS_mobile_broker.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		AF08A06FCF06FC76441B0581 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -650,17 +733,24 @@
 				ADF59EBD1E5C9459007A0BAB /* SubscriberViewController.swift in Sources */,
 				AD87D8341E5F7E9F0055C116 /* Identifiable.swift in Sources */,
 				ADF59EBF1E5C94A8007A0BAB /* BaseViewController.swift in Sources */,
+				AD16AAE71E855D6F003F8C70 /* Geometry.swift in Sources */,
 				AD87D84D1E6034550055C116 /* SubscriptionListPresenter.swift in Sources */,
+				AD16AAED1E855D6F003F8C70 /* Publisher.swift in Sources */,
 				AD8B3DE81E6339FD00606E04 /* Subscription.swift in Sources */,
+				AD16AAE61E855D6F003F8C70 /* CUPUSMessages.swift in Sources */,
 				AD8B00671E5CA50300D6A17E /* LocationManager.swift in Sources */,
 				ADD699D11E5DE35F00D12C11 /* AlertHandler.swift in Sources */,
+				AD16AAF11E8675AC003F8C70 /* TCPClient.swift in Sources */,
 				AD8D8A5B1E6CB8950000C760 /* BasicCell.swift in Sources */,
 				AD87D8291E5F7C050055C116 /* TableViewController.swift in Sources */,
 				ADAB09201E6AF47800D51A58 /* SettingsCellPresentable.swift in Sources */,
 				AD8D8A541E6CB8700000C760 /* AudioRecorder.swift in Sources */,
+				AD16AAEE1E855D6F003F8C70 /* Subscriber.swift in Sources */,
 				ADD699CE1E5DE24500D12C11 /* LongPressHandler.swift in Sources */,
+				AD16AAE91E855D6F003F8C70 /* Payload.swift in Sources */,
 				AD8D8A5D1E6CB8950000C760 /* ButtonCell.swift in Sources */,
 				AD8B3DE61E6332D700606E04 /* SubscriptionCreationPresenter.swift in Sources */,
+				AD16AAEC1E855D6F003F8C70 /* Result.swift in Sources */,
 				AD10FB941E6628D000E9F700 /* SettingsPresentable.swift in Sources */,
 				ADD699CF1E5DE24500D12C11 /* MapCircleDrawer.swift in Sources */,
 				ADCBE8C11E68D13B0094AB09 /* UITableView.swift in Sources */,
@@ -669,7 +759,10 @@
 				AD8D8A5F1E6CB8950000C760 /* InputCell.swift in Sources */,
 				AD87D8361E5F7F6F0055C116 /* ViewController.swift in Sources */,
 				AD4EDD561E65FA5E0047C788 /* SensorCell.swift in Sources */,
+				AD16AAE51E855D6F003F8C70 /* BaseMessage.swift in Sources */,
+				AD16AAEA1E855D6F003F8C70 /* Predicate.swift in Sources */,
 				AD10FB8C1E660B2400E9F700 /* AudioSensorPresenter.swift in Sources */,
+				AD16AAE81E855D6F003F8C70 /* JSON.swift in Sources */,
 				AD8B3DEB1E6350D300606E04 /* SensorsPresenter.swift in Sources */,
 				ADF59EBA1E5C91C9007A0BAB /* TabViewController.swift in Sources */,
 				AD87D8531E60380E0055C116 /* SubscriptionCell.swift in Sources */,
@@ -678,6 +771,7 @@
 				AD8B3DE11E631FB300606E04 /* Circle.swift in Sources */,
 				AD87D8551E6045620055C116 /* Rounding.swift in Sources */,
 				AD8B3DE51E6332D700606E04 /* SubscriptionCreationPresentable.swift in Sources */,
+				AD16AAEB1E855D6F003F8C70 /* Property.swift in Sources */,
 				ADF59E8B1E5C90AB007A0BAB /* AppDelegate.swift in Sources */,
 				ADE04A811E7A1D7000972A8C /* FIleWriter.swift in Sources */,
 			);

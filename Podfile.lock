@@ -7,17 +7,20 @@ PODS:
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
   - RxSwift (3.2.0)
+  - SwiftSocket (2.0.1)
 
 DEPENDENCIES:
   - GoogleMaps
   - RxCocoa (~> 3.0)
   - RxSwift (~> 3.0)
+  - SwiftSocket
 
 SPEC CHECKSUMS:
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  SwiftSocket: 2d814afdc97c89217982f86fd036c1874134a63f
 
-PODFILE CHECKSUM: 65ccc858863fa7e1c150b06c57a792e3c4bcd6d0
+PODFILE CHECKSUM: 0df309eb11f94dbbd84934a71699e7ccabe6ac09
 
 COCOAPODS: 1.2.0

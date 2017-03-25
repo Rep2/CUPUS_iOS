@@ -2,11 +2,11 @@ import CoreLocation
 
 struct Subscription {
     let type: SubscriptionType
-    let subscriptionTypes: [String]
+    let subscriptionValues: [SubscriptionValue]
     
-    init(type: SubscriptionType, subscriptionTypes: [String]) {
+    init(type: SubscriptionType, subscriptionValues: [SubscriptionValue]) {
         self.type = type
-        self.subscriptionTypes = subscriptionTypes
+        self.subscriptionValues = subscriptionValues
     }
     
     var circle: Circle {
@@ -18,5 +18,19 @@ struct Subscription {
         case .pick(let circle):
             return circle
         }
+    }
+}
+
+struct SubscriptionValue {
+    let identifier: String
+    let printableText: String
+
+    static var values: [SubscriptionValue] {
+        return [
+            SubscriptionValue(identifier: "humidity", printableText: "Humidity"),
+            SubscriptionValue(identifier: "ambientLight", printableText: "Ambient Light"),
+            SubscriptionValue(identifier: "ambientNoise", printableText: "Ambient Noise"),
+            SubscriptionValue(identifier: "temperature", printableText: "Temperature")
+        ]
     }
 }

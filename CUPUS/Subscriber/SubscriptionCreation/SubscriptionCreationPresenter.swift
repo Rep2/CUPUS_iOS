@@ -3,7 +3,7 @@ import UIKit
 class SubscriptionCreationPresenter: NSObject {
     
     weak var tableViewController: TableViewController?
-    var presentable = SubscriptionCreationPresentable.mock
+    var presentable = SubscriptionCreationPresentable.presentable
     
     var subscriptionType: SubscriptionType
     
@@ -43,13 +43,14 @@ extension SubscriptionCreationPresenter: TableViewDelegate {
     
     func savePressed() {
         let slectedTypes = presentable.subscriptionTypes.filter { $0.selected }.map { $0.title }
+        let selectedSubscriptionValues = SubscriptionValue.values.filter { slectedTypes.contains($0.printableText) }
         
-        if slectedTypes.count == 0 {
+        if selectedSubscriptionValues.count == 0 {
             tableViewController?.presentAlert(title: "Select at least one subscription type", actions: [
                     UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 ])
         } else {
-            SubscriptionHandler.sharedInstance.createSubscription(type: subscriptionType, filters: slectedTypes)
+            SubscriptionHandler.sharedInstance.createSubscription(type: subscriptionType, subscriptionValues: selectedSubscriptionValues)
             
             _ = tableViewController?.navigationController?.popViewController(animated: true)
         }

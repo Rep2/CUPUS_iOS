@@ -4,6 +4,7 @@ target 'CUPUS' do
   pod 'GoogleMaps'
   pod 'RxSwift',    '~> 3.0'
   pod 'RxCocoa',    '~> 3.0'
+  pod 'SwiftSocket'
 
   target 'CUPUSTests' do
     inherit! :search_paths

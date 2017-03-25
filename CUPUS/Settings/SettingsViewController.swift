@@ -14,7 +14,7 @@ class SettingsViewController: UITableViewController {
                 return SettingsPresenter.sharedInstance.settings.ip
             }),
             SettingsCellPresentable(title: "Server port", value: "\(SettingsPresenter.sharedInstance.settings.port)", valueUpdatedCallback: { value in
-                if let value = Int(value), value > 0 && value < 100000 {
+                if let value = Int32(value), value > 0 && value < 100000 {
                     SettingsPresenter.sharedInstance.settings.port = value
                 }
                 

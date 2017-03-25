@@ -5,13 +5,10 @@ struct SubscriptionCreationPresentable {
         self.subscriptionTypes = subscriptionTypes
     }
 
-    static var mock: SubscriptionCreationPresentable {
-        return SubscriptionCreationPresentable(subscriptionTypes: [
-            SubscriptionFilterPresentable(title: "CO2"),
-            SubscriptionFilterPresentable(title: "O2"),
-            SubscriptionFilterPresentable(title: "Temperature"),
-            SubscriptionFilterPresentable(title: "Pressure")
-            ])
+    static var presentable: SubscriptionCreationPresentable {
+        return SubscriptionCreationPresentable(subscriptionTypes: SubscriptionValue.values.map {
+            SubscriptionFilterPresentable(title: $0.printableText)
+        })
     }
 }
 
