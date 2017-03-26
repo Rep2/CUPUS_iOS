@@ -52,7 +52,13 @@ public class Publisher {
                 do {
                     let data = try message.json()
 
-                    client.asyncSend(data: data, callback: callback)
+                    client.asyncSend(data: data, callback: { publishResult in
+                        if case .failure = publishResult {
+                            Publisher.client = nil
+                        }
+
+                        callback(publishResult)
+                    })
                 } catch let error {
                     Publisher.client = nil
 

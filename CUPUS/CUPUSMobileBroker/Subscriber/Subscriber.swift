@@ -68,6 +68,8 @@ class Subscriber {
                                     }
                                 }
 
+                                Subscriber.client = nil
+
                                 newPublicationCallback(.failure(error: JSONError.objectParsingFailed))
                             })
                         case .failure(let error):
