@@ -12,6 +12,7 @@ class SubscriptionHandler {
         Subscriber.subscribe(ip: settings.ip, port: settings.port, geometry: geometry, predicates: predicates, callback: { result in
                 switch result {
                 case .failure(let error):
+                    self.subscriptionFailed()
                     print("\(error) while sending subscription")
                 case .success:
                     print("subscription sent")
@@ -19,7 +20,8 @@ class SubscriptionHandler {
         }) { publicationResult in
             switch publicationResult {
             case .failure(let error):
-                print("\(error) while receaving publication subscription")
+                self.subscriptionFailed()
+                print("\(error) while sending subscription")
             case .success(let publication):
                 print("recieved publication \(publication)")
             }
@@ -72,5 +74,10 @@ extension SubscriptionHandler {
         if let selectedIndex = selectedSubscriptionIndex, selectedIndex == indexPath.row {
             selectedSubscriptionIndex = subscriptions.count != 0 ? 0 : nil
         }
+    }
+
+    func subscriptionFailed() {
+        subscriptions.removeAll()
+        selectedSubscriptionIndex = nil
     }
 }

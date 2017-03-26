@@ -11,11 +11,13 @@ extension TCPClient {
 
     func asyncRead(callback: @escaping ([Byte]?) -> Void) {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            while let strongSelf = self {
-                let result = strongSelf.read(1000)
+            var result: [Byte]?
+
+            repeat {
+                result = self?.read(1000)
 
                 callback(result)
-            }
+            } while result != nil
         }
     }
 }

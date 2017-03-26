@@ -27,8 +27,6 @@ class Subscriber {
                             callback(.failure(error: error))
                         }
                     })
-
-                    callback(ValueResult.success(value: client))
                 case .failure(let error):
                     callback(ValueResult.failure(error: error))
                 }
