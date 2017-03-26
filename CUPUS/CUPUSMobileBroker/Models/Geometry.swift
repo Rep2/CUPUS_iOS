@@ -1,6 +1,6 @@
 public enum Geometry: JSON {
     case point(x: Double, y: Double)
-    case square(point1: (Double, Double), point2: (Double, Double), point3: (Double, Double), point4: (Double, Double))
+    case polygon(pints: [(Double, Double)])
     
     var jsonDictionary: [String : Any] {
         switch self {
@@ -9,32 +9,38 @@ public enum Geometry: JSON {
                 "coordinates": [x, y],
                 "type": "Point"
             ]
-        case .square(let point1, let point2, let point3, let point4):
+        case .polygon(let points):
             return [
-                "coordinates": [point1.0, point1.1, point2.0, point2.1, point3.0, point3.1, point4.0, point4.1],
-                "type": "Rectangle"
+                "coordinates": [points.map { [$0.0, $0.1] }],
+                "type": "Polygon"
             ]
         }
     }
 
     static func from(json: [String: Any]) throws -> Geometry {
-        guard let type = json["type"] as? String, let coordinates = json["coordinates"] as? [Double] else {
+        guard let type = json["type"] as? String else {
             throw JSONError.objectParsingFailed
         }
 
         switch type {
         case "Point":
-            if coordinates.count != 2 {
+            guard let coordinates = json["coordinates"] as? [Double], coordinates.count == 2 else {
                 throw JSONError.objectParsingFailed
             }
 
             return .point(x: coordinates[0], y: coordinates[1])
-        case "Rectangle":
-            if coordinates.count != 8 {
+        case "Polygon":
+            guard let coordinates = json["coordinates"] as? [[Double]] else {
                 throw JSONError.objectParsingFailed
             }
 
-            return .square(point1: (coordinates[0], coordinates[1]), point2: (coordinates[2], coordinates[3]), point3: (coordinates[4], coordinates[5]), point4: (coordinates[6], coordinates[7]))
+            try coordinates.forEach { coordinate in
+                guard coordinate.count == 2 else {
+                    throw JSONError.objectParsingFailed
+                }
+            }
+
+            return .polygon(pints: coordinates.map { ($0[0], $0[1]) })
         default:
             throw JSONError.objectParsingFailed
         }

@@ -102,7 +102,7 @@ extension SubscriptionCreationPresenter {
             cell = tableView.dequeueReusableCell(withIdentifier: InputCell.identifier, for: indexPath)
             
             if let cell = cell as? InputCell {
-                cell.set(presentable: InputCellPresentableBasic(title: "Radius pretplate u metrima", input: String(Int(radius)), inputViewDidChange: radiusChanged))
+                cell.set(presentable: InputCellPresentableBasic(title: "Radius of subscription in meters", input: String(Int(radius)), inputViewDidChange: radiusChanged))
             }
         case (.follow, 1), (.pick, 0):
             cell = tableView.dequeueReusableCell(withIdentifier: BasicCell.identifier, for: indexPath)
@@ -114,7 +114,7 @@ extension SubscriptionCreationPresenter {
             cell = tableView.dequeueReusableCell(withIdentifier: ButtonCell.identifier, for: indexPath)
             
             if let cell = cell as? ButtonCell {
-                cell.set(presentable: "Spremi")
+                cell.set(presentable: "Save")
             }
         default:
             fatalError("No cell for \(subscriptionType) in section \(indexPath.section)")

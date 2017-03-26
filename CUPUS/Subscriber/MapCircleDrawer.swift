@@ -36,6 +36,8 @@ class MapWithCircleDrawer {
     func deleteCircle() {
         circle?.map = nil
         circle = nil
+
+        removeMarkers()
     }
     
     func set(circle: GMSCircle) {
@@ -59,5 +61,18 @@ class MapWithCircleDrawer {
         circle.map = mapView
         
         return circle
+    }
+
+    var markers = [GMSMarker]()
+
+    func add(marker: GMSMarker) {
+        markers.append(marker)
+
+        marker.map = mapView
+    }
+
+    func removeMarkers() {
+        markers.forEach { $0.map = nil }
+        markers.removeAll()
     }
 }

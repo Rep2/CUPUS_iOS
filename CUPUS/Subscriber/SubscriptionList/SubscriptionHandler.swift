@@ -6,22 +6,36 @@ class SubscriptionHandler {
     var subscriptions = [Subscription]()
     var selectedSubscriptionIndex: Int?
 
-    func sendSubscription(geometry: Geometry, predicates: [Predicate]) {
+    func sendSubscription(subscription: Subscription) {
+        let locations = [
+            location(bearing: 45, distanceMeters: subscription.circle.radius, origin: subscription.circle.position),
+            location(bearing: 135, distanceMeters: subscription.circle.radius, origin: subscription.circle.position),
+            location(bearing: 225, distanceMeters: subscription.circle.radius, origin: subscription.circle.position),
+            location(bearing: 315, distanceMeters: subscription.circle.radius, origin: subscription.circle.position)
+        ]
+
+        let rectangle = Geometry.polygon(pints: locations.map { ($0.latitude, $0.longitude) })
+
+        let predicates = subscription.subscriptionValues.map {
+            Predicate(value: "id", key: $0.identifier, predicateOperator: .equal)
+        }
+
         let settings = SettingsPresenter.sharedInstance.settings
 
-        Subscriber.subscribe(ip: settings.ip, port: settings.port, geometry: geometry, predicates: predicates, callback: { result in
+        Subscriber.subscribe(ip: settings.ip, port: settings.port, geometry: rectangle, predicates: predicates, callback: { result in
                 switch result {
-                case .failure(let error):
+                case .failure:
                     self.subscriptionFailed()
-                    print("\(error) while sending subscription")
+
+                    SubscriberViewController.sharedInstance.presentAlert(title: "Failed to send subscription", message: "Check internet connection and server ip/port", actions: [UIAlertAction.init(title: "OK", style: .cancel, handler: nil)])
                 case .success:
                     print("subscription sent")
                 }
         }) { publicationResult in
             switch publicationResult {
-            case .failure(let error):
+            case .failure:
                 self.subscriptionFailed()
-                print("\(error) while sending subscription")
+                SubscriberViewController.sharedInstance.presentAlert(title: "Error while receving publication", message: "Check internet connection and server state", actions: [UIAlertAction.init(title: "OK", style: .cancel, handler: nil)])
             case .success(let publication):
                 print("recieved publication \(publication)")
             }
@@ -35,20 +49,7 @@ extension SubscriptionHandler {
         
         add(subscription: subscription)
 
-        let locations = [
-            location(bearing: 45, distanceMeters: subscription.circle.radius, origin: subscription.circle.position),
-            location(bearing: 135, distanceMeters: subscription.circle.radius, origin: subscription.circle.position),
-            location(bearing: 225, distanceMeters: subscription.circle.radius, origin: subscription.circle.position),
-            location(bearing: 315, distanceMeters: subscription.circle.radius, origin: subscription.circle.position)
-        ]
-
-        let rectangle = Geometry.square(point1: (locations[0].latitude, locations[0].longitude), point2: (locations[1].latitude, locations[1].longitude), point3: (locations[2].latitude, locations[2].longitude), point4: (locations[3].latitude, locations[3].longitude))
-
-        let predicates = subscriptionValues.map {
-            Predicate(value: "id", key: $0.identifier, predicateOperator: .equal)
-        }
-
-        sendSubscription(geometry: rectangle, predicates: predicates)
+        sendSubscription(subscription: subscription)
     }
     
     func add(subscription: Subscription) {
@@ -61,7 +62,7 @@ extension SubscriptionHandler {
     }
     
     var selectedSubscription: Subscription? {
-        if let selectedSubscriptionIndex = selectedSubscriptionIndex {
+        if let selectedSubscriptionIndex = selectedSubscriptionIndex, selectedSubscriptionIndex >= 0 && selectedSubscriptionIndex < subscriptions.count {
             return subscriptions[selectedSubscriptionIndex]
         } else {
             return nil
@@ -79,5 +80,26 @@ extension SubscriptionHandler {
     func subscriptionFailed() {
         subscriptions.removeAll()
         selectedSubscriptionIndex = nil
+
+        DispatchQueue.main.async {
+            SubscriberViewController.sharedInstance.mapWithCircle.deleteCircle()
+        }
+    }
+
+    func new(payload: Payload, for subscription: Subscription) {
+        let index = subscriptions
+            .map { $0.identifier }
+            .enumerated()
+            .filter { $0.element == subscription.identifier }
+            .first?.offset
+
+        if let index = index {
+            subscriptions[index].payloads.append(payload)
+
+            if let selectedSubscriptionIndex = selectedSubscriptionIndex, index == selectedSubscriptionIndex {
+                SubscriberViewController.sharedInstance.addMarker(for: payload)
+            }
+        }
+
     }
 }

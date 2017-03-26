@@ -404,8 +404,8 @@
 		ADF59EBB1E5C9425007A0BAB /* Subscriber */ = {
 			isa = PBXGroup;
 			children = (
-				AD87D8451E5FAA1B0055C116 /* SubscriptionList */,
 				AD8B3DE21E6332D700606E04 /* SubscriptionCreation */,
+				AD87D8451E5FAA1B0055C116 /* SubscriptionList */,
 				ADF59EBC1E5C9459007A0BAB /* SubscriberViewController.swift */,
 				ADD699CC1E5DE24500D12C11 /* LongPressHandler.swift */,
 				ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */,

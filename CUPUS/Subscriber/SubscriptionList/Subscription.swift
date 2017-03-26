@@ -1,12 +1,20 @@
 import CoreLocation
 
 struct Subscription {
+    let identifier: String
     let type: SubscriptionType
     let subscriptionValues: [SubscriptionValue]
+
+    var payloads: [Payload]
     
-    init(type: SubscriptionType, subscriptionValues: [SubscriptionValue]) {
+    init(type: SubscriptionType, subscriptionValues: [SubscriptionValue], payloads: [Payload] = [
+        Payload(geometry: .point(x: 45.8144400, y: 15.9779800), properties: [Property(value: 11, key: "co"),Property(value: 11, key: "minimum"),Property(value: [11,312,412,2], key: "values")], startDate: nil, endDate: nil)
+        ]) {
         self.type = type
         self.subscriptionValues = subscriptionValues
+        self.payloads = payloads
+
+        self.identifier = UUID().uuidString
     }
     
     var circle: Circle {

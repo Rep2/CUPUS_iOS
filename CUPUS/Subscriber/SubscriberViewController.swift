@@ -2,6 +2,8 @@ import UIKit
 import GoogleMaps
 
 class SubscriberViewController: BaseViewController {
+
+    static var sharedInstance: SubscriberViewController!
     
     var mapWithCircle: MapWithCircleDrawer!
     var longPressHadnler: LongPressHadnler!
@@ -28,6 +30,8 @@ class SubscriberViewController: BaseViewController {
     
     override init() {
         super.init()
+
+        SubscriberViewController.sharedInstance = self
     }
     
     override func viewDidLoad() {
@@ -46,11 +50,28 @@ class SubscriberViewController: BaseViewController {
         
         if let subscription = SubscriptionHandler.sharedInstance.selectedSubscription {
             mapWithCircle.set(circle: subscription.circle)
+
+            mapWithCircle.removeMarkers()
+
+            subscription.payloads.forEach { addMarker(for: $0) }
         } else {
             mapWithCircle.deleteCircle()
         }
     }
-    
+
+    func addMarker(for payload: Payload) {
+        if let geometry = payload.geometry, case .point(let x, let y) = geometry {
+            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: x, longitude: y))
+
+            if let properties = payload.properties as? [Property] {
+                marker.isTappable = true
+                marker.snippet = properties.map { "\($0.key): \($0.value)" }.joined(separator: ", ")
+            }
+
+            mapWithCircle.add(marker: marker)
+        }
+    }
+
     func createMap() {
         let location = LocationManager.sharedInstance.location.value ?? CLLocation(latitude: 45.8144400, longitude: 15.9779800)
         

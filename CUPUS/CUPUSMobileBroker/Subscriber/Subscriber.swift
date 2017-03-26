@@ -71,14 +71,20 @@ class Subscriber {
                                 newPublicationCallback(.failure(error: JSONError.objectParsingFailed))
                             })
                         case .failure(let error):
+                            Subscriber.client = nil
+
                             callback(Result.failure(error))
                         }
                     })
                 } catch let error {
+                    Subscriber.client = nil
+
                     callback(Result.failure(error))
                 }
 
             case .failure(let error):
+                Subscriber.client = nil
+
                 callback(.failure(error))
             }
         }
