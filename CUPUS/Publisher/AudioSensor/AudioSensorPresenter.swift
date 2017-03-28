@@ -40,8 +40,8 @@ class AudioSensorPresenter {
         if on && !isRecording {
             let settings = SettingsPresenter.sharedInstance.settings
 
-            publishTimer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { _ in
-                 let location = CLLocation(latitude: 45.8144400, longitude: 15.9779800)
+            publishTimer = Timer.scheduledTimer(withTimeInterval: settings.sendPeriod, repeats: true, block: { _ in
+                if let location = LocationManager.sharedInstance.location.value {
                     if self.notSentValues.count > 0 {
                         self.notSentValues.forEach({ (minimum, maximum, values) in
                             self.sendPublication(minimumValue: minimum, maximumValue: maximum, values: values, location: location)
@@ -49,9 +49,9 @@ class AudioSensorPresenter {
                     }
 
                     self.sendPublication(minimumValue: self.minimumValue ?? 0, maximumValue: self.maximumValue ?? 0, values: self.buffer ?? [], location: location)
-                //} else {
-                  //  self.notSentValues.append((self.minimumValue ?? 0, self.maximumValue ?? 0, self.buffer))
-                //}
+                } else {
+                    self.notSentValues.append((self.minimumValue ?? 0, self.maximumValue ?? 0, self.buffer))
+                }
 
                 self.buffer = []
 
@@ -134,7 +134,9 @@ class AudioSensorPresenter {
         let logURL = directory.appendingPathComponent("CUPUSAudioRecordingLog.txt")!
         
         do {
-            try "\(dateFormatter.string(from: date)) rawValue: \(rawValue) finalValue: \(value)".writeLine(to: logURL)
+            let location = LocationManager.sharedInstance.location.value
+
+            try "\(dateFormatter.string(from: date)) rawValue: \(rawValue) finalValue: \(value) location: (\(location?.coordinate.latitude ?? 0),\(location?.coordinate.longitude ?? 0))".writeLine(to: logURL)
         } catch {
             print("Failed to write to log")
         }
