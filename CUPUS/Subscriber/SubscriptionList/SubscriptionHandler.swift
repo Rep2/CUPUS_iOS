@@ -16,9 +16,11 @@ class SubscriptionHandler {
 
         let rectangle = Geometry.polygon(pints: locations.map { ($0.latitude, $0.longitude) })
 
-        let predicates = subscription.subscriptionValues.map {
-            Predicate(value: "id", key: $0.identifier, predicateOperator: .equal)
+        var predicates = subscription.subscriptionValues.map {
+            Predicate(value: "-inf", key: $0.identifier + "Min", predicateOperator: .greater)
         }
+
+        predicates.append(Predicate(value: "SensorReading", key: "Type", predicateOperator: .equal))
 
         let settings = SettingsPresenter.sharedInstance.settings
 

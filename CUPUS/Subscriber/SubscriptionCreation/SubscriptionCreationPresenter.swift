@@ -1,13 +1,13 @@
 import UIKit
 
+/// Presents table view with subscription creation options
 class SubscriptionCreationPresenter: NSObject {
+    fileprivate weak var tableViewController: TableViewController?
+    fileprivate var presentable = SubscriptionCreationPresentable.presentable
     
-    weak var tableViewController: TableViewController?
-    var presentable = SubscriptionCreationPresentable.presentable
+    fileprivate var subscriptionType: SubscriptionType
     
-    var subscriptionType: SubscriptionType
-    
-    init(subscriptionType: SubscriptionType) {
+    private init(subscriptionType: SubscriptionType) {
         self.subscriptionType = subscriptionType
         super.init()
     }
@@ -24,7 +24,6 @@ class SubscriptionCreationPresenter: NSObject {
 }
 
 extension SubscriptionCreationPresenter: TableViewDelegate {
-    
     func viewDidLoad() {
         tableViewController?.tableView.register(UINib(nibName: BasicCell.identifier, bundle: nil), forCellReuseIdentifier: BasicCell.identifier)
         tableViewController?.tableView.register(UINib(nibName: ButtonCell.identifier, bundle: nil), forCellReuseIdentifier: ButtonCell.identifier)

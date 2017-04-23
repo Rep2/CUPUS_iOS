@@ -85,9 +85,9 @@ class AudioSensorPresenter {
 
         Publisher.publish(ip: settings.ip, port: settings.port, geometry: Geometry.point(x: location.coordinate.latitude, y: location.coordinate.longitude), properties: [
             Property(value: "SensorReading", key: "Type"),
-            Property(value: minimumValue, key: "minimum"),
-            Property(value: maximumValue, key: "maximum"),
-            Property(value: values, key: "noiseVolumes")
+            Property(value: minimumValue, key: SubscriptionValue.ambientNoiseIdentifier + "Min"),
+            Property(value: maximumValue, key: SubscriptionValue.ambientNoiseIdentifier + "Max"),
+            Property(value: values, key: SubscriptionValue.ambientNoiseIdentifier)
             ], callback: { result in
                 switch result {
                 case .success:

@@ -1,18 +1,18 @@
 struct SubscriptionCreationPresentable {
-    var subscriptionTypes: [SubscriptionFilterPresentable]
+    var subscriptionTypes: [SubscriptionTypePresentable]
     
-    init(subscriptionTypes: [SubscriptionFilterPresentable]) {
+    init(subscriptionTypes: [SubscriptionTypePresentable]) {
         self.subscriptionTypes = subscriptionTypes
     }
 
     static var presentable: SubscriptionCreationPresentable {
         return SubscriptionCreationPresentable(subscriptionTypes: SubscriptionValue.values.map {
-            SubscriptionFilterPresentable(title: $0.printableText)
+            SubscriptionTypePresentable(title: $0.printableText)
         })
     }
 }
 
-struct SubscriptionFilterPresentable: BasicCellPresentable {
+struct SubscriptionTypePresentable: BasicCellPresentable {
     let title: String
     var selected: Bool
     

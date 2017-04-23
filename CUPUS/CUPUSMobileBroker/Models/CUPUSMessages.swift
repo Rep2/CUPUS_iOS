@@ -35,13 +35,13 @@ enum CUPUSMessages: JSON {
             ]
         case .publish(let payload, let unpublish):
             return [
-                "unpublish": unpublish ? "True" : "False",
+                "unpublish": unpublish,
                 "type": "HashtablePublication",
                 "payload": payload.jsonDictionary
             ]
         case .subscribe(let payload, let unsubscribe):
             return [
-                "unsubscribe": unsubscribe ? "True" : "False",
+                "unsubscribe": unsubscribe,
                 "type": "TripletSubscription",
                 "payload": payload.jsonDictionary,
             ]

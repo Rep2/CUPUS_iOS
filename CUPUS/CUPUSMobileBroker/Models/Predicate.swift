@@ -21,16 +21,16 @@ public struct Predicate: JSON {
 public enum Operator {
     case equal
     case less
-    case more
+    case greater
     
     var identifier: String {
         switch self {
         case .equal:
             return "EQUAL"
         case .less:
-            return "LESS"
-        case .more:
-            return "MORE"
+            return "LESS_THAN"
+        case .greater:
+            return "GREATER_THAN"
         }
     }
 }

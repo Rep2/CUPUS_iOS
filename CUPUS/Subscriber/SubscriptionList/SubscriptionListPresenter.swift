@@ -1,13 +1,11 @@
 import UIKit
 
 class SubscriptionListPresenter: NSObject {
-    
     weak var tableViewController: TableViewController?
     
     static func create() -> (SubscriptionListPresenter, TableViewController) {
         let presenter = SubscriptionListPresenter()
         let controller = TableViewController(delegate: presenter)
-        
         presenter.tableViewController = controller
         
         return (presenter, controller)
