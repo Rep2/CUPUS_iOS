@@ -1,8 +1,8 @@
 import UIKit
 
 enum CUPUSMessages: JSON {
-    case registerPublisher(name: String)
-    case registerSubscriber(name: String)
+    case registerPublisher
+    case registerSubscriber
     case publish(payload: Payload, unpublish: Bool)
     case subscribe(payload: Payload, unsubscribe: Bool)
 
@@ -21,16 +21,16 @@ enum CUPUSMessages: JSON {
     
     var jsonDictionary: [String: Any] {
         switch self {
-        case .registerPublisher(let name):
+        case .registerPublisher:
             return [
-                "en": name,
+                "en": "Publisher",
                 "id": (UIDevice.current.identifierForVendor ?? UUID()).uuidString
             ]
-        case .registerSubscriber(let name):
+        case .registerSubscriber:
             return [
                 "port": "0",
-                "ip": "192.168.1.8",
-                "en": name,
+                "ip": getWiFiAddress() ?? "127.0.0.1",
+                "en": "Subscriber",
                 "id": (UIDevice.current.identifierForVendor ?? UUID()).uuidString
             ]
         case .publish(let payload, let unpublish):

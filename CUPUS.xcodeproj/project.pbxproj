@@ -58,6 +58,7 @@
 		ADD699CF1E5DE24500D12C11 /* MapCircleDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */; };
 		ADD699D11E5DE35F00D12C11 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD699D01E5DE35F00D12C11 /* AlertHandler.swift */; };
 		ADE04A811E7A1D7000972A8C /* FIleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE04A801E7A1D7000972A8C /* FIleWriter.swift */; };
+		ADE890C51EB118C7004F5C97 /* IPFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE890C41EB118C7004F5C97 /* IPFinder.swift */; };
 		ADF59E8B1E5C90AB007A0BAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF59E8A1E5C90AB007A0BAB /* AppDelegate.swift */; };
 		ADF59E921E5C90AB007A0BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF59E911E5C90AB007A0BAB /* Assets.xcassets */; };
 		ADF59E951E5C90AB007A0BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF59E931E5C90AB007A0BAB /* LaunchScreen.storyboard */; };
@@ -144,6 +145,8 @@
 		ADD699CD1E5DE24500D12C11 /* MapCircleDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCircleDrawer.swift; path = Subscriber/MapCircleDrawer.swift; sourceTree = "<group>"; };
 		ADD699D01E5DE35F00D12C11 /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		ADE04A801E7A1D7000972A8C /* FIleWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FIleWriter.swift; path = Extensions/FIleWriter.swift; sourceTree = "<group>"; };
+		ADE890C41EB118C7004F5C97 /* IPFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPFinder.swift; path = Extensions/IPFinder.swift; sourceTree = "<group>"; };
+		ADE890C61EB118F1004F5C97 /* CUPUS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CUPUS-Bridging-Header.h"; sourceTree = "<group>"; };
 		ADF59E871E5C90AB007A0BAB /* CUPUS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CUPUS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF59E8A1E5C90AB007A0BAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADF59E911E5C90AB007A0BAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -326,6 +329,7 @@
 				ADE04A801E7A1D7000972A8C /* FIleWriter.swift */,
 				AD16AAF01E8675AC003F8C70 /* TCPClient.swift */,
 				AD5716051E86A6C5006D54A0 /* LocationWithDistance.swift */,
+				ADE890C41EB118C7004F5C97 /* IPFinder.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -371,6 +375,7 @@
 				AD8B00661E5CA50300D6A17E /* LocationManager.swift */,
 				ADD699D01E5DE35F00D12C11 /* AlertHandler.swift */,
 				AD87D8281E5F7C050055C116 /* TableViewController.swift */,
+				ADE890C61EB118F1004F5C97 /* CUPUS-Bridging-Header.h */,
 			);
 			path = CUPUS;
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 					ADF59E861E5C90AB007A0BAB = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = VVAK2SR2GT;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -766,6 +772,7 @@
 				AD8B3DE51E6332D700606E04 /* SubscriptionCreationPresentable.swift in Sources */,
 				AD16AAEB1E855D6F003F8C70 /* Property.swift in Sources */,
 				ADF59E8B1E5C90AB007A0BAB /* AppDelegate.swift in Sources */,
+				ADE890C51EB118C7004F5C97 /* IPFinder.swift in Sources */,
 				ADE04A811E7A1D7000972A8C /* FIleWriter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -911,12 +918,15 @@
 			baseConfigurationReference = 28C50451E35C344EA56CF791 /* Pods-CUPUS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = VVAK2SR2GT;
 				INFOPLIST_FILE = CUPUS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fer.CUPUS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CUPUS/CUPUS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -927,12 +937,14 @@
 			baseConfigurationReference = A9E7E5576F6C7470FE1A2336 /* Pods-CUPUS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = VVAK2SR2GT;
 				INFOPLIST_FILE = CUPUS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fer.CUPUS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CUPUS/CUPUS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

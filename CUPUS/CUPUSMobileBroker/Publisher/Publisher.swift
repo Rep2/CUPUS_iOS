@@ -34,7 +34,7 @@ public class Publisher {
 
     private static func registerPublisher(with client: TCPClient, name: String, callback: @escaping (Result) -> Void) {
         do {
-            let message = BaseMessage(message: CUPUSMessages.registerPublisher(name: name))
+            let message = BaseMessage(message: CUPUSMessages.registerPublisher)
             let data = try message.json()
 
             client.asyncSend(data: data, callback: callback)

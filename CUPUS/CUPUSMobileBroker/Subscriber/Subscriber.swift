@@ -36,7 +36,7 @@ class Subscriber {
 
     private static func registerSubscriber(with client: TCPClient, name: String, callback: @escaping (Result) -> Void) {
         do {
-            let message = BaseMessage(message: CUPUSMessages.registerSubscriber(name: name))
+            let message = BaseMessage(message: CUPUSMessages.registerSubscriber)
             let data = try message.json()
 
             client.asyncSend(data: data, callback: callback)
