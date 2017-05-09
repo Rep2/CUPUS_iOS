@@ -1,6 +1,6 @@
 import CoreLocation
 
-struct Subscription {
+class Subscription {
     let identifier: String
     let type: SubscriptionType
     let subscriptionValues: [SubscriptionValue]
@@ -37,6 +37,24 @@ struct SubscriptionValue {
             SubscriptionValue(identifier: SubscriptionValue.ambientLightIdentifier, printableText: "Ambient Light"),
             SubscriptionValue(identifier: SubscriptionValue.ambientNoiseIdentifier, printableText: "Ambient Noise"),
             SubscriptionValue(identifier: SubscriptionValue.temperatureIdentifier, printableText: "Temperature")
+        ]
+    }
+
+    static var identifiers: [String] {
+        return [
+            ambientNoiseIdentifier,
+            humidityIdentifier,
+            ambientLightIdentifier,
+            temperatureIdentifier
+        ]
+    }
+
+    static var printableText: [String: String] {
+        return [
+            ambientNoiseIdentifier: "Ambient Noise",
+            humidityIdentifier: "Humidity",
+            ambientLightIdentifier: "Ambient Light",
+            temperatureIdentifier: "Temperature"
         ]
     }
 

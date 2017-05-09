@@ -11,7 +11,8 @@ class SubscriptionHandler {
             location(bearing: 45, distanceMeters: subscription.circle.radius, origin: subscription.circle.position),
             location(bearing: 135, distanceMeters: subscription.circle.radius, origin: subscription.circle.position),
             location(bearing: 225, distanceMeters: subscription.circle.radius, origin: subscription.circle.position),
-            location(bearing: 315, distanceMeters: subscription.circle.radius, origin: subscription.circle.position)
+            location(bearing: 315, distanceMeters: subscription.circle.radius, origin: subscription.circle.position),
+            location(bearing: 45, distanceMeters: subscription.circle.radius, origin: subscription.circle.position)
         ]
 
         let rectangle = Geometry.polygon(pints: locations.map { ($0.latitude, $0.longitude) })
@@ -39,6 +40,12 @@ class SubscriptionHandler {
                 self.subscriptionFailed()
                 SubscriberViewController.sharedInstance.presentAlert(title: "Error while receving publication", message: "Check internet connection and server state", actions: [UIAlertAction.init(title: "OK", style: .cancel, handler: nil)])
             case .success(let publication):
+                self.subscriptions
+                    .filter { subscription.identifier == $0.identifier }
+                    .first?
+                    .payloads
+                    .append(publication)
+                SubscriberViewController.sharedInstance.reloadSubscription()
                 print("recieved publication \(publication)")
             }
         }

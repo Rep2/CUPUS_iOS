@@ -47,15 +47,21 @@ class SubscriberViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if let subscription = SubscriptionHandler.sharedInstance.selectedSubscription {
-            mapWithCircle.set(circle: subscription.circle)
 
-            mapWithCircle.removeMarkers()
+        reloadSubscription()
+    }
 
-            subscription.payloads.forEach { addMarker(for: $0) }
-        } else {
-            mapWithCircle.deleteCircle()
+    func reloadSubscription() {
+        DispatchQueue.main.async {
+            if let subscription = SubscriptionHandler.sharedInstance.selectedSubscription {
+                self.mapWithCircle.set(circle: subscription.circle)
+
+                self.mapWithCircle.removeMarkers()
+
+                subscription.payloads.forEach { self.addMarker(for: $0) }
+            } else {
+                self.mapWithCircle.deleteCircle()
+            }
         }
     }
 
@@ -65,12 +71,42 @@ class SubscriberViewController: BaseViewController {
 
             if let properties = payload.properties as? [Property] {
                 marker.isTappable = true
-                marker.snippet = properties.map { "\($0.key): \($0.value)" }.joined(separator: ", ")
+                marker.snippet = markerSnippet(properties: properties)
             }
 
             mapWithCircle.add(marker: marker)
         }
     }
+
+    func markerSnippet(properties: [Property]) -> String {
+        var snippets = [String]()
+
+        for identifier in SubscriptionValue.identifiers {
+            if properties.filter({ $0.key == identifier }).count != 0 {
+                if let printableText = SubscriptionValue.printableText[identifier] {
+                    snippets.append(printableText)
+                }
+
+                if let avg = properties.filter({ $0.key == identifier + "Avg" }).first {
+                    snippets.append("Average value: \(avg.value)")
+                }
+
+                if let min = properties.filter({ $0.key == identifier + "Min" }).first {
+                    snippets.append("Minimum value: \(min.value)")
+                }
+
+                if let max = properties.filter({ $0.key == identifier + "Max" }).first {
+                    snippets.append("Maximum value: \(max.value)")
+                }
+
+                return snippets.joined(separator: ",\n")
+            }
+        }
+
+        // If no identifier is found fallback
+        return properties.map { "\($0.key): \($0.value)" }.joined(separator: ", ")
+    }
+
 
     func createMap() {
         let location = LocationManager.sharedInstance.location.value ?? CLLocation(latitude: 45.8144400, longitude: 15.9779800)

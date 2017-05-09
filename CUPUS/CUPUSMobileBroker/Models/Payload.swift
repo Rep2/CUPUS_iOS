@@ -55,13 +55,14 @@ struct Payload: JSON {
 
     static func fromBaseJSON(json: [String: Any]) throws -> Payload {
         guard let messageIdentifier = json["type"] as? String,
-            let message = json["message"] as? [String: Any] else {
+            let message = json["message"] as? [String: Any],
+            let payload = message["payload"] as? [String: Any] else {
                 throw JSONError.objectParsingFailed
         }
 
         switch messageIdentifier {
         case "NotifyMessage":
-            return  try Payload.from(json: message)
+            return  try Payload.from(json: payload)
         default:
             throw JSONError.objectParsingFailed
         }
