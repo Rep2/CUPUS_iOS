@@ -83,8 +83,19 @@ class AudioSensorPresenter {
     func sendPublication(minimumValue: Float, maximumValue: Float, values: [Float], location: CLLocation) {
         let settings = SettingsPresenter.sharedInstance.settings
 
+        let antiLoged = values
+            .map { pow(10, $0/20.0) }
+            .reduce(0) { $0 + $1 }
+
+        let avgValue = 20.0 * log10(
+            antiLoged / Float(values.count)
+        )
+
+        print(avgValue)
+
         Publisher.publish(ip: settings.ip, port: settings.port, geometry: Geometry.point(x: location.coordinate.latitude, y: location.coordinate.longitude), properties: [
             Property(value: "SensorReading", key: "Type"),
+            Property(value: avgValue, key: SubscriptionValue.ambientNoiseIdentifier + "Avg"),
             Property(value: minimumValue, key: SubscriptionValue.ambientNoiseIdentifier + "Min"),
             Property(value: maximumValue, key: SubscriptionValue.ambientNoiseIdentifier + "Max"),
             Property(value: values, key: SubscriptionValue.ambientNoiseIdentifier)
